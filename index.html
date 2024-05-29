@@ -68,6 +68,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="row">
                     <div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
                         <div>
+                            <link href="https://autodj.mediapanel.app/widgets/player.css" rel="stylesheet" type="text/css">
+<audio preload="none" src="https://autodj.mediapanel.app:8259/stream?q=x5g4fn4rt9" id="song" ontimeupdate="updateTime()">
+</audio>
+<div id="audioplayer" class="size-med">
+  <div id="songPlayPause" onclick="playPause('song')">&#x25b6;</div>
+  <div id="songStop" onclick="stopSong()"></div>
+  <div id="songSlider" onclick="setSongPosition(this,event)">
+    <div id="songTimeA">0:00</div>
+    <div id="songTimeB"></div>
+    <div id="trackProgress">
+      <div id="songTimeC">0:00</div>
+      <div id="songTimeD">LIVE</div>
+    </div>
+  </div>
+  <div id="volume-container">
+    <div id="volume" onclick="muteAudio()">
+      <div id="volume-icon"></div>
+      <span>)</span><span>)</span><span>)</span></div>
+    <div id="volumeUp" onclick="changeVolume(10, 'up')">+</div>
+    <br>
+    <div id="volumeDown" onclick="changeVolume(10, 'down')">-</div>
+    <div id="volumeMeter" onclick="setNewVolume(this,event)">
+      <div id="volumeStatus"></div>
+    </div>
+  </div>
+</div>
+<script src="https://autodj.mediapanel.app/widgets/player.js" type="text/javascript"></script>
                         <iframe title="Radio Oasis Stereo FHC" class="flex-column d-flex d-sm-flex d-md-flex" src="https://streaming01.shockmedia.com.ar/cp/widgets/player/single/?p=9244" width="700px" scrolling="no" style="max-width: 100%; height:auto; border:none; margin-bottom:250px; display:flex;" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
