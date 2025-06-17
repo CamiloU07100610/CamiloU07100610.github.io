@@ -34,3 +34,124 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     margin: 0;
 }
 
+/* Super Audio Player Styles */
+.super-audio-player {
+    background: rgba(255,255,255,0.95);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    padding: 32px 36px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 370px;
+    transition: box-shadow 0.3s;
+    border: 2px solid #007bff33;
+    position: relative;
+    backdrop-filter: blur(2px);
+}
+
+.super-audio-player:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.35);
+    border-color: #007bff88;
+}
+
+.super-audio-cover {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 16px rgba(0,123,255,0.18);
+    border: 4px solid #007bff33;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 #007bff44; }
+    70% { box-shadow: 0 0 0 12px #007bff11; }
+    100% { box-shadow: 0 0 0 0 #007bff44; }
+}
+
+.super-audio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: drop-shadow(0 2px 8px #007bff33);
+}
+
+.super-audio-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.super-audio-element {
+    width: 220px;
+    accent-color: #007bff;
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #007bff22;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.super-audio-element:focus {
+    box-shadow: 0 0 0 3px #007bff55;
+}
+
+.super-audio-title {
+    font-family: 'Roboto Slab', Impact, Arial, sans-serif;
+    font-size: 1.25rem;
+    color: #007bff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 0 2px 8px #007bff22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.live-badge {
+    background: #ff1744;
+    color: #fff;
+    font-size: 0.85em;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 2px 10px 2px 8px;
+    margin-left: 8px;
+    box-shadow: 0 2px 8px #ff174422;
+    letter-spacing: 0.5px;
+    animation: live-blink 1.2s infinite;
+}
+
+@keyframes live-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .super-audio-player {
+        min-width: 90vw;
+        max-width: 98vw;
+        padding: 18px 6vw 18px 6vw;
+    }
+    .super-audio-cover {
+        width: 80px;
+        height: 80px;
+    }
+    .super-audio-element {
+        width: 98vw;
+        max-width: 220px;
+    }
+}
