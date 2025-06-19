@@ -7,31 +7,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navegación AJAX para enlaces internos
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            const href = link.getAttribute('href');
-            // Cierra el menú hamburguesa inmediatamente al hacer clic
-            var navbarCollapse = document.getElementById('navcol-1');
-            if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
-                new bootstrap.Collapse(navbarCollapse).hide();
-            }
-            setTimeout(function() {
-                document.body.classList.remove('modal-open');
-                document.body.style.overflow = '';
-                let backdrops = document.querySelectorAll('.modal-backdrop, .offcanvas-backdrop, .navbar-backdrop');
-                backdrops.forEach(b => b.parentNode && b.parentNode.removeChild(b));
-            }, 350);
-            // Solo AJAX para enlaces internos .html
-            if (href && href.match(/^\.|\/[^:]+\.html$/)) {
-                e.preventDefault();
-                // En móvil, recarga completa para evitar problemas de AJAX
-                if (window.innerWidth < 992) {
-                    window.location.href = href;
-                } else {
-                    loadSection(href);
-                    history.pushState(null, '', href);
+        // Unifica el manejo de eventos para click y touchend
+        ['click', 'touchend'].forEach(function(eventName) {
+            link.addEventListener(eventName, function(e) {
+                const href = link.getAttribute('href');
+                // Solo AJAX para enlaces internos .html
+                if (href && href.match(/^\.|\/[^:]+\.html$/)) {
+                    e.preventDefault();
+                    // En móvil, recarga completa para evitar problemas de AJAX
+                    if (window.innerWidth < 992) {
+                        window.location.href = href;
+                        // Cierra el menú hamburguesa después de navegar (no antes)
+                        var navbarCollapse = document.getElementById('navcol-1');
+                        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                            new bootstrap.Collapse(navbarCollapse).hide();
+                        }
+                        document.body.classList.remove('modal-open');
+                        document.body.style.overflow = '';
+                        let backdrops = document.querySelectorAll('.modal-backdrop, .offcanvas-backdrop, .navbar-backdrop');
+                        backdrops.forEach(b => b.parentNode && b.parentNode.removeChild(b));
+                        return;
+                    } else {
+                        // PC: AJAX
+                        var navbarCollapse = document.getElementById('navcol-1');
+                        if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+                            new bootstrap.Collapse(navbarCollapse).hide();
+                        }
+                        document.body.classList.remove('modal-open');
+                        document.body.style.overflow = '';
+                        let backdrops = document.querySelectorAll('.modal-backdrop, .offcanvas-backdrop, .navbar-backdrop');
+                        backdrops.forEach(b => b.parentNode && b.parentNode.removeChild(b));
+                        loadSection(href);
+                        history.pushState(null, '', href);
+                    }
                 }
-            }
-        }, {passive:true});
+            }, {passive:true});
+        });
     });
 
     // Soporte para navegación con el botón atrás/adelante

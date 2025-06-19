@@ -38,9 +38,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" media="print" onload="this.media='all'">
-    <!-- Estilos personalizados diferidos -->
-    <link rel="stylesheet" href="assets/css/Responsive-UI-Card.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="assets/css/dh-row-text-image-right.css" media="print" onload="this.media='all'">
     <link rel="shortcut icon" href="./assets/img/symbol.ico">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPZKCC85ND"></script>
@@ -175,8 +172,13 @@
                 <div class="spinner-border text-info" role="status">
                     <span class="visually-hidden">Cargando...</span>
                 </div>
+                <div id="google-news-widget">
+                    <ul id="news-list">
+                        <li>Cargando noticias...</li>
+                    </ul>
+                </div>
             </div>
-            <div id="noticias-mundo-widget" style="display:none"></div>
+
         </section>
         <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-3s">
             <h2 class="text-center mb-4">Junior</h2>
@@ -443,6 +445,56 @@
             .hero-title { font-size: 1.1rem; }
             .hero-desc { font-size: 0.98rem; }
         }
+        #google-news-widget {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+        }
+        #google-news-widget h2 {
+            font-size: 22px;
+            margin: 0 0 15px 0;
+            color: #212121;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        #google-news-widget ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #google-news-widget li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        #google-news-widget li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        #google-news-widget a {
+            text-decoration: none;
+            color: #1a0dab;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #google-news-widget a:hover {
+            text-decoration: underline;
+        }
+        #google-news-widget p {
+            font-size: 14px;
+            color: #5f6368;
+            margin: 5px 0 0 0;
+        }
+        #google-news-widget .news-source {
+            font-size: 12px;
+            color: #3c4043;
+            font-style: italic;
+        }
     </style>
     <script>
         // Soluciona error de carga AJAX: fuerza recarga completa si el contenido principal no se renderiza bien
@@ -467,6 +519,53 @@
         if ('scrollBehavior' in document.documentElement.style) {
             document.documentElement.style.scrollBehavior = 'smooth';
         }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // URL del feed RSS de Google News para noticias generales del mundo en español (edición de España para cobertura amplia)
+            const rssUrl = "https://news.google.com/rss?hl=es&gl=ES&ceid=ES:es";
+
+            // Usamos un servicio gratuito que convierte RSS a JSON y evita problemas de CORS
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+            const newsList = document.getElementById("news-list");
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    newsList.innerHTML = ""; // Limpiar el mensaje "Cargando..."
+                    if (data.status === "ok") {
+                        // Limitar a los primeros 7 artículos
+                        const items = data.items.slice(0, 7);
+                        items.forEach(item => {
+                            const listItem = document.createElement("li");
+
+                            // Crear el enlace
+                            const link = document.createElement("a");
+                            link.href = item.link;
+                            link.target = "_blank"; // Abrir en una nueva pestaña
+                            link.rel = "noopener noreferrer";
+                            link.textContent = item.title;
+
+                            // Crear el párrafo para la fuente y fecha
+                            const source = document.createElement("p");
+                            const pubDate = new Date(item.pubDate);
+                            source.className = "news-source";
+                            source.textContent = `${item.author || 'Google News'} - ${pubDate.toLocaleDateString('es-ES')}`;
+
+                            listItem.appendChild(link);
+                            listItem.appendChild(source);
+                            newsList.appendChild(listItem);
+                        });
+                    } else {
+                        newsList.innerHTML = "<li>No se pudieron cargar las noticias.</li>";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error al cargar el feed de noticias:", error);
+                    newsList.innerHTML = "<li>Ocurrió un error al cargar las noticias.</li>";
+                });
+        });
     </script>
 </body>
 

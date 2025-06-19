@@ -112,9 +112,7 @@
                 <p class="lead text-center hero-desc">Bienvenido a los podcast de <span class="brand-gradient">Oasis Stereo FHC</span>. Para escuchar nuestro contenido y ver las novedades, entra a nuestra página de Spotify:</p>
                 <div class="spotify-icon-wrapper my-3">
                     <a aria-label="Spotify" href="https://open.spotify.com/show/2Q1KeaDfEUL1h3CWvAJX0k" target="_blank" class="spotify-link-premium">
-                        <span class="fa-stack fa-2x">
-                            <i class="fab fa-spotify fa-stack-1x spotify-icon" style="font-size:2.5rem;"></i>
-                        </span>
+                        <i class="fab fa-spotify spotify-icon"></i>
                     </a>
                 </div>
             </div>
@@ -160,68 +158,34 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1db954 60%, #23272f 100%);
-            box-shadow: 0 2px 12px #1db95455, 0 1px 6px #23272f33;
-            transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
-            position: relative;
-            z-index: 2;
-            overflow: hidden;
-            border: 2px solid #1db954;
+            background: none;
+            border: none;
+            box-shadow: none;
             padding: 0;
+            transition: transform 0.2s;
         }
 
-        .spotify-link-premium i, .spotify-link-premium svg {
-            font-size: 32px;
-            color: #fff;
-            display: block;
-            margin: 0;
+        .spotify-link-premium .spotify-icon {
+            font-size: 3.2rem;
+            color: #1db954;
+            text-shadow: 0 2px 12px #1db95444, 0 1px 6px #23272f33;
+            transition: color 0.2s, text-shadow 0.2s, transform 0.2s;
         }
 
-        .spotify-link-premium:hover {
+        .spotify-link-premium:hover .spotify-icon {
+            color: #17a74a;
+            text-shadow: 0 4px 24px #1db95499;
             transform: scale(1.13) rotate(-3deg);
-            box-shadow: 0 8px 32px #1db95499, 0 2.5px 18px #23272f55;
-            background: linear-gradient(135deg, #23272f 0%, #1db954 100%);
-            border-color: #1db954;
-        }
-
-        .spotify-link-premium::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 50%;
-            box-shadow: 0 0 0 8px #1db95422, 0 0 16px 0 #1db95444;
-            pointer-events: none;
-        }
-
-        .spotify-icon {
-            color: #fff;
-            font-size: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 3;
-            text-shadow: 0 2px 8px #1db95499;
         }
 
         @media (max-width: 700px) {
-            .spotify-link-premium {
-                width: 52px;
-                height: 52px;
+            .spotify-link-premium .spotify-icon {
+                font-size: 2.2rem;
             }
+        }
 
-            .spotify-icon {
-                width: 28px;
-                height: 28px;
+        @media (max-width: 400px) {
+            .spotify-link-premium .spotify-icon {
                 font-size: 1.5rem;
             }
         }

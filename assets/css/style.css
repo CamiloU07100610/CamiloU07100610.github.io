@@ -666,28 +666,101 @@ footer p {
     align-items: center;
     margin-bottom: 18px;
 }
+
 .spotify-link-premium {
-    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    box-shadow: 0 4px 24px #1db95455, 0 1.5px 12px #23272f33;
     background: linear-gradient(135deg, #1db954 60%, #23272f 100%);
-    padding: 12px;
-    display: inline-block;
+    box-shadow: 0 2px 12px #1db95455, 0 1px 6px #23272f33;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+    border: 2px solid #1db954;
+    padding: 0;
+    cursor: pointer;
 }
+
+.spotify-link-premium .fa-spotify {
+    font-size: 2.2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    position: relative;
+    z-index: 3;
+    text-shadow: 0 2px 8px #1db95499;
+    transition: color 0.2s;
+}
+
 .spotify-link-premium:hover {
-    transform: scale(1.12) rotate(-3deg);
+    transform: scale(1.13) rotate(-3deg);
     box-shadow: 0 8px 32px #1db95499, 0 2.5px 18px #23272f55;
     background: linear-gradient(135deg, #23272f 0%, #1db954 100%);
+    border-color: #1db954;
 }
-.spotify-bg {
-    color: #1db954;
-    filter: drop-shadow(0 2px 8px #1db95444);
-}
-.spotify-icon {
+
+.spotify-link-premium:hover .fa-spotify {
     color: #fff;
-    text-shadow: 0 2px 8px #1db95499;
+    text-shadow: 0 4px 16px #1db954cc;
+}
+
+.spotify-link-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #1db95422, 0 0 16px 0 #1db95444;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 991px) {
+    .spotify-link-premium {
+        width: 48px;
+        height: 48px;
+    }
+    .spotify-link-premium .fa-spotify {
+        font-size: 1.6rem;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+}
+@media (max-width: 700px) {
+    .spotify-link-premium {
+        width: 44px;
+        height: 44px;
+    }
+    .spotify-link-premium .fa-spotify {
+        font-size: 1.2rem;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+    }
+}
+@media (max-width: 400px) {
+    .spotify-link-premium {
+        width: 36px;
+        height: 36px;
+    }
+    .spotify-link-premium .fa-spotify {
+        font-size: 1rem;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+    }
 }
 
 /* --- GLASSMORPHISM GENERAL --- */
