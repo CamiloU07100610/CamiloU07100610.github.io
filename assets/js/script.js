@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navegación AJAX para enlaces internos
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
-        link.addEventListener(isTouchDevice() ? 'touchstart' : 'click', function(e) {
+        link.addEventListener('click', function(e) {
             const href = link.getAttribute('href');
-            // Cierra el menú hamburguesa inmediatamente al hacer clic/touch
+            // Cierra el menú hamburguesa inmediatamente al hacer clic
             var navbarCollapse = document.getElementById('navcol-1');
             if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
                 new bootstrap.Collapse(navbarCollapse).hide();
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 backdrops.forEach(b => b.parentNode && b.parentNode.removeChild(b));
             }, 350);
             // Solo AJAX para enlaces internos .html
-            if (href && href.match(/^(\.|\/)[^:]+\.html$/)) {
+            if (href && href.match(/^\.|\/[^:]+\.html$/)) {
                 e.preventDefault();
                 // En móvil, recarga completa para evitar problemas de AJAX
                 if (window.innerWidth < 992) {
