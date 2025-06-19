@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
                 new bootstrap.Collapse(navbarCollapse).hide();
             }
+            // Forzar quitar el overlay de Bootstrap en móvil (solución para Android)
+            setTimeout(function() {
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                let backdrops = document.querySelectorAll('.modal-backdrop, .offcanvas-backdrop, .navbar-backdrop');
+                backdrops.forEach(b => b.parentNode.removeChild(b));
+            }, 350);
             if (href && href.endsWith('.html')) {
                 e.preventDefault();
                 loadSection(href);
