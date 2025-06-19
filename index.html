@@ -1,101 +1,306 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="es">
+<html lang="es" data-bs-theme="light">
 
 <head>
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5R2S2LVS');</script>
-<!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPZKCC85ND"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-GPZKCC85ND');
-</script>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5R2S2LVS');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="radio del centro oasis fundacion hogares claret"/>
-    <meta name="keywords" content="OasisRadioFHC,OasisStereoFHC,Oasisstereofhc,oasisstereofhc,oasistadiofhc,fhcradio"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="radio del centro oasis fundacion hogares claret" />
+    <meta name="keywords" content="OasisRadioFHC,OasisStereoFHC,Oasisstereofhc,oasisstereofhc,oasistadiofhc,fhcradio" />
     <meta itemprop="name" content="IETAC" />
     <meta itemprop="image" content="./assets/img/imagen emisora.jpg" />
     <title>Oasis Stereo FHC</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <!-- CSS crítico -->
+    <link rel="preload" href="assets/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </noscript>
+    <!-- Fuentes e iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" media="print" onload="this.media='all'">
     <link rel="shortcut icon" href="./assets/img/symbol.ico">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPZKCC85ND"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GPZKCC85ND');
+    </script>
+    <meta name="theme-color" content="#181c22">
+    <meta name="color-scheme" content="dark light">
+    <!-- Paleta y variables CSS modernas -->
+    <style>:root {
+        --color-bg: #181c22;
+        --color-bg2: #23272f;
+        --color-accent: #00bfff;
+        --color-accent2: #70A1FF;
+        --color-card: rgba(30,32,38,0.92);
+        --color-card-glass: rgba(30,32,38,0.75);
+        --color-text: #e0e0e0;
+        --color-title: #00bfff;
+        --color-footer: #23272f;
+        --color-navbar: #181c22;
+        --color-navbar2: #23272f;
+        --color-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17), 0 1.5px 12px 0 #007bff22;
+        --radius-main: 22px;
+        --radius-card: 18px;
+        --radius-btn: 10px;
+        --font-main: 'Roboto', Arial, sans-serif;
+        --font-title: 'Roboto Slab', Impact, Arial, sans-serif;
+    }</style>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R2S2LVS"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R2S2LVS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header>
-        <nav class="navbar fixed-top navbar-dark navbar-expand-lg main-navbar">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="https://oasisstereo.me">
-                    <img width="44" height="44" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png">
-                    <span class="ms-2">Oasis Stereo FHC</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="https://www.fundacionhogaresclaret.com/">Claret</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./podcast.html">Podcast</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/index.html">Radio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./noticias.html">Noticias</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./preguntas.html">Preguntas Frecuentes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./terminos.html">Terminos y condiciones</a></li>
-                    </ul>
-                </div>
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#"><img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy"> <span>Oasis Stereo FHC</span></a>
+            <button data-bs-toggle="collapse" class="navbar-toggler collapsed" data-bs-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navcol-1">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="https://www.fundacionhogaresclaret.com/">Claret</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./podcast.html">Podcast</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Radio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./preguntas.html">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./terminos.html">Términos y condiciones</a></li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <main style="margin-top:70px;">
-    <section class="hero-section">
-        <img src="./assets/img/imagenemisora.jpg" alt="Imagen principal" class="hero-img-bg">
-        <div class="hero-content">
-            <h1>Oasis Stereo FHC</h1>
-            <p>Radio Oasis Stereo Fundación Hogares Claret</p>
         </div>
-    </section>
-    <section class="py-4 py-xl-5">
-        <div class="container flex-column">
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <div class="row w-100 justify-content-center">
-                    <div class="col-12 col-md-10 col-xl-8 text-center d-flex justify-content-center align-items-center mx-auto">
-                        <div id="radio-iframe-container" class="super-radio-iframe-container">
-                            <iframe
-                                src="https://halo.streamerr.co/public/oasisstereo/embed?theme=dark"
-                                frameborder="0"
-                                allowtransparency="true"
-                                id="radio-iframe"
-                                title="Reproductor Oasis Stereo"></iframe>
+    </nav>
+    <main style="margin-top:70px;">
+        <section class="hero-section glass-section">
+            <div class="hero-img-bg-wrapper">
+                <img src="./assets/img/imagenemisora.jpg" alt="Imagen principal" class="hero-img-bg" loading="lazy">
+            </div>
+            <div class="hero-content-below hero-content-below-responsive">
+                <h1>Oasis Stereo FHC</h1>
+                <p>Radio Oasis Stereo Fundación Hogares Claret</p>
+            </div>
+        </section>
+        <section class="py-4 py-xl-5">
+            <div class="container flex-column">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="row w-100 justify-content-center">
+                        <div class="col-12 col-md-10 col-xl-8 text-center d-flex justify-content-center align-items-center mx-auto">
+                            <div id="radio-iframe-container" class="super-radio-iframe-container glass-card">
+                                <div class="responsive-radio-iframe-wrapper">
+                                    <iframe src="https://player.radioking.io/oasis-stereo/?c=%2370A1FF&c2=%232F3542&f=h&i=0&p=1&s=1&li=1&popup=1&plc=NaN&h=undefined&l=750&v=2"
+                                        class="responsive-radio-iframe"
+                                        allow="autoplay"
+                                        loading="lazy"
+                                        title="Reproductor Oasis Stereo"
+                                        frameborder="0"></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </main>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <div id="footerpad"></div>
+    <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script type="text/javascript" src="https://player.radioking.io/scripts/iframe.bundle.js"></script>
+    <style>
+        /* Responsive radio iframe wrapper */
+        .responsive-radio-iframe-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            aspect-ratio: 16/3;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .responsive-radio-iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 90px;
+            max-height: 180px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+            border: none;
+            background: transparent;
+            display: block;
+        }
+
+        @media (max-width: 700px) {
+            .responsive-radio-iframe-wrapper {
+                max-width: 99vw;
+                aspect-ratio: 16/5;
+                min-height: 70px;
+            }
+
+            .responsive-radio-iframe {
+                min-height: 70px;
+                max-height: 120px;
+                border-radius: 8px;
+            }
+        }
+
+        .hero-section {
+            width: 100vw;
+            max-width: 100vw;
+            margin: 0 auto 32px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(120deg, #181c22 60%, #23272f 100%);
+            border-radius: 0 0 32px 32px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+            padding: 0;
+        }
+
+        .hero-img-bg-wrapper {
+            width: 100vw;
+            max-width: 100vw;
+            aspect-ratio: 16/7;
+            min-height: 180px;
+            max-height: 420px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #23272f;
+        }
+
+        .hero-img-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 2px 16px #23272f44;
+            background: #23272f;
+            transition: filter 0.5s;
+            filter: brightness(0.98) contrast(1.08) saturate(1.1);
+        }
+
+        .hero-content-below {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(30,32,38,0.85);
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.10);
+            padding: 32px 18px 24px 18px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            top: -12px;
+            z-index: 2;
+            animation: fadeInUp 1.2s;
+        }
+
+        .hero-content-below-responsive {
+            font-size: 1.05rem;
+            padding: 18px 8px 12px 8px;
+            max-width: 90vw;
+        }
+
+        .hero-content-below-responsive h1 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            letter-spacing: 1.2px;
+        }
+
+        .hero-content-below-responsive p {
+            font-size: 0.98rem;
+            color: #c8e6fa;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content-below-responsive {
+                font-size: 0.98rem;
+                padding: 12px 4vw 8px 4vw;
+            }
+
+            .hero-content-below-responsive h1 {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content-below-responsive {
+                font-size: 0.92rem;
+                padding: 8px 2vw 6px 2vw;
+            }
+
+            .hero-content-below-responsive h1 {
+                font-size: 0.98rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-img-bg-wrapper {
+                aspect-ratio: 16/10;
+                min-height: 120px;
+                max-height: 220px;
+            }
+
+            .hero-content-below {
+                border-radius: 0 0 18px 18px;
+                padding: 18px 6px 14px 6px;
+            }
+
+            .hero-content-below h1 { font-size: 1.3rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-img-bg-wrapper {
+                aspect-ratio: 16/13;
+                min-height: 80px;
+                max-height: 120px;
+            }
+
+            .hero-content-below {
+                border-radius: 0 0 10px 10px;
+                padding: 12px 2vw 8px 2vw;
+            }
+
+            .hero-content-below h1 { font-size: 1.1rem; }
+        }
+    </style>
 </body>
 
 </html>
-

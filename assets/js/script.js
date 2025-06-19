@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
         link.addEventListener('click', function(e) {
             const href = link.getAttribute('href');
+            // Cierra el menú hamburguesa inmediatamente al hacer clic
+            var navbarCollapse = document.getElementById('navcol-1');
+            if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
             if (href && href.endsWith('.html')) {
                 e.preventDefault();
                 loadSection(href);
@@ -39,17 +44,14 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        // Responsive: cerrar menú al hacer clic en un enlace en móvil
-        document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                var navbarCollapse = document.getElementById('navcol-1');
-                if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
-                    new bootstrap.Collapse(navbarCollapse).hide();
-                }
-            });
-        });
-
+    // Responsive: cerrar menú al hacer clic en un enlace en móvil (más rápido)
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+        link.addEventListener('touchstart', function() {
+            var navbarCollapse = document.getElementById('navcol-1');
+            if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
+        }, {passive:true});
     });
 
     // Cargar footer dinámicamente en todas las páginas

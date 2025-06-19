@@ -1,174 +1,473 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html lang="es" data-bs-theme="light">
 
 <head>
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5R2S2LVS');</script>
-<!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPZKCC85ND"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-GPZKCC85ND');
-</script>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5R2S2LVS');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="radio del centro oasis fundacion hogares claret"/>
-    <meta name="keywords" content="OasisRadioFHC,OasisStereoFHC,Oasisstereofhc,oasisstereofhc,oasistadiofhc,fhcradio"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="radio del centro oasis fundacion hogares claret" />
+    <meta name="keywords" content="OasisRadioFHC,OasisStereoFHC,Oasisstereofhc,oasisstereofhc,oasistadiofhc,fhcradio" />
     <meta itemprop="name" content="IETAC" />
     <meta itemprop="image" content="./assets/img/imagen emisora.jpg" />
     <title>Oasis Stereo FHC Noticias</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <!-- CSS crítico -->
+    <link rel="preload" href="assets/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </noscript>
+    <!-- Fuentes e iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" media="print" onload="this.media='all'">
+    <!-- Estilos personalizados diferidos -->
+    <link rel="stylesheet" href="assets/css/Responsive-UI-Card.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/dh-row-text-image-right.css" media="print" onload="this.media='all'">
     <link rel="shortcut icon" href="./assets/img/symbol.ico">
-    <link rel="stylesheet" href="assets/css/Footer-Dark-icons.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/dh-row-text-image-right.css">
-    <link rel="stylesheet" href="assets/css/Responsive-UI-Card.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPZKCC85ND"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GPZKCC85ND');
+    </script>
+    <meta name="theme-color" content="#181c22">
+    <meta name="color-scheme" content="dark light">
+    <!-- Paleta y variables CSS modernas -->
+    <style>:root {
+        --color-bg: #181c22;
+        --color-bg2: #23272f;
+        --color-accent: #00bfff;
+        --color-accent2: #70A1FF;
+        --color-card: rgba(30,32,38,0.92);
+        --color-card-glass: rgba(30,32,38,0.75);
+        --color-text: #e0e0e0;
+        --color-title: #00bfff;
+        --color-footer: #23272f;
+        --color-navbar: #181c22;
+        --color-navbar2: #23272f;
+        --color-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17), 0 1.5px 12px 0 #007bff22;
+        --radius-main: 22px;
+        --radius-card: 18px;
+        --radius-btn: 10px;
+        --font-main: 'Roboto', Arial, sans-serif;
+        --font-title: 'Roboto Slab', Impact, Arial, sans-serif;
+    }</style>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R2S2LVS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <section class="text-white py-4 py-xl-5 flex-column d-flex d-sm-flex d-md-flex">
-        <nav class="navbar fixed-top bg-dark navbar-dark flex-column d-flex d-sm-flex d-md-flex">
-            <div class="container"><a class="navbar-brand" href="#"><span><img width="auto" height="auto" alt="Logo de la fundación Hogares Claret" style = " width : 60px; height : 60px; "  src="./assets/img/logo1.png"></span>Oasis Stereo FHC</a><button data-bs-toggle="collapse" class="navbar-toggler collapsed" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse text-center flex-column" id="navcol-1">
-                    <ul class="navbar-nav flex-column d-flex d-sm-flex d-md-flex">
-                        <li class="nav-item"><a class="nav-link" href="https://www.fundacionhogaresclaret.com/">Claret</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./podcast.html">Podcast</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/index.html">Radio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./noticias.html">Noticias</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./preguntas.html">Preguntas Frecuentes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./terminos.html">Terminos y condiciones</a></li>
-                    </ul>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R2S2LVS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#"><img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy"> <span>Oasis Stereo FHC</span></a>
+            <button data-bs-toggle="collapse" class="navbar-toggler collapsed" data-bs-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navcol-1">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="https://www.fundacionhogaresclaret.com/">Claret</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./podcast.html">Podcast</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Radio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./preguntas.html">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./terminos.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container-fluid px-0" id="main-content" style="margin-top:90px;">
+        <section class="row align-items-center g-0 animate__animated animate__fadeInUp hero-noticias-section" style="margin-top: 32px; margin-bottom: 32px;">
+            <div class="col-12 col-md-6 p-0 order-md-2 d-flex align-items-stretch hero-img-wrapper position-relative">
+                <img class="hero-img-noticias" src="assets/img/imagenemisora.jpg" alt="Emisora Oasis" loading="lazy">
+                <div class="hero-img-overlay"></div>
+                <div class="hero-img-logo-wrapper">
+                    <img src="assets/img/logo1.png" alt="Logo Oasis Stereo" class="hero-img-logo" loading="lazy">
                 </div>
             </div>
-        </nav>
-    </section>
-
-<main style="margin-top:90px;">
-<div class="row clearmargin clearpadding row-image-txt" style="margin-top: 20px; margin-bottom: 20px;">
-            <div class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6"><img style="width:100%;"
-                    src="assets/img/imagenemisora.jpg"></div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding:20px;">
-                <h1>Noticias</h1>
-                <hr>
-                <p>Bienvenido a las noticias de Oasis Stereo FHC, aquí podra ver los sucesos mas significativos de nuestro centro y del mundo</p>
-                    <div class="container">
-        </div>
+            <div class="col-12 col-md-6 order-md-1 d-flex flex-column justify-content-center align-items-center p-4 hero-content-wrapper">
+                <h1 class="display-4 fw-bold mb-3 hero-title">Noticias</h1>
+                <hr class="hero-hr">
+                <p class="lead text-center hero-desc">Bienvenido a las noticias de <span class="brand-gradient">Oasis Stereo FHC</span>. Aquí podrá ver los sucesos más significativos de nuestro centro y del mundo.</p>
             </div>
-        </div>
-    <h1 class="text-black">Noticias de la institución</h1>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-  <div class="blog-card blog-card-blog">
-    <div class="blog-card-image">
-        <a href="#"> <img class="img" src="assets/img/imagenemisora.jpg"> </a>
-        <div class="ripple-cont"></div>
-    </div>
-    <div class="blog-table">
-        <h6 class="blog-category blog-text-success"><i class="far fa-newspaper"></i> Noticias</h6>
-        <h4 class="blog-card-caption">
-            <a href="#">Oasis Stereo FHC</a>
-        </h4>
-        <p class="blog-card-description">El dia 15 de mayo se estreno la radio oficial del centro oasis.</p>
-        <div class="ftr">
-            <div class="author">
-                <a href="https://www.fundacionhogaresclaret.com/"> <img src="./assets/img/claret.png" alt="..." class="avatar img-raised"> <span>Oasis</span> </a>
+        </section>
+        <section class="container animate__animated animate__fadeInUp animate__delay-1s">
+            <h2 class="text-center mb-4">Noticias de la institución</h2>
+            <div class="row g-4" id="noticias-cards-row">
+                <article class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
+                        <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 1" loading="lazy" style="height:200px;object-fit:cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-info mb-2"><i class="far fa-newspaper"></i> Noticias</h6>
+                            <h4 class="card-title mb-2">Oasis Stereo FHC</h4>
+                            <p class="card-text flex-grow-1">El día 15 de mayo se estrenó la radio oficial del centro oasis.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="author d-flex align-items-center gap-2">
+                                    <a href="https://www.fundacionhogaresclaret.com/"><img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" loading="lazy" style="width:32px;height:32px;border-radius:50%;"> <span>Oasis</span></a>
+                                </div>
+                                <div class="stats"><i class="far fa-clock"></i> 15/05/24</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
+                        <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 2" loading="lazy" style="height:200px;object-fit:cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-info mb-2"><i class="fas fa-blog"></i> Noticias</h6>
+                            <h4 class="card-title mb-2">Se estrenó la sección de podcast en la radio Oasis Stereo FHC</h4>
+                            <p class="card-text flex-grow-1">Se estrenó el podcast de Oasis Stereo FHC.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="author d-flex align-items-center gap-2">
+                                    <a href="https://www.fundacionhogaresclaret.com/"><img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" loading="lazy" style="width:32px;height:32px;border-radius:50%;"> <span>Oasis</span></a>
+                                </div>
+                                <div class="stats"><i class="far fa-clock"></i> 20/05/24</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
+                        <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 3" loading="lazy" style="height:200px;object-fit:cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-info mb-2"><i class="far fa-newspaper"></i> Noticias</h6>
+                            <h4 class="card-title mb-2">Se estrena la sección de noticias en la radio Oasis Stereo FHC</h4>
+                            <p class="card-text flex-grow-1">El 28 de mayo se estrenó nuestra sección de noticias donde puede ver las noticias de la fundación y además las noticias del mundo.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="author d-flex align-items-center gap-2">
+                                    <a href="https://www.fundacionhogaresclaret.com/"><img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" loading="lazy" style="width:32px;height:32px;border-radius:50%;"> <span>Oasis</span></a>
+                                </div>
+                                <div class="stats"><i class="far fa-clock"></i> 28/05/24</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="stats"> <i class="far fa-clock"></i> 15/05/24 </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
-    <div class="col-md-4">
-  <div class="blog-card blog-card-blog">
-    <div class="blog-card-image">
-        <a href="#"> <img class="img" src="assets/img/imagenemisora.jpg"> </a>
-        <div class="ripple-cont"></div>
-    </div>
-    <div class="blog-table">
-        <h6 class="blog-category blog-text-success"><i class="fas fa-blog"></i>Noticias</h6>
-        <h4 class="blog-card-caption">
-            <a href="#">Se estreno la seccion de podcast en la radio Oasis Stereo FHC</a>
-        </h4>
-        <p class="blog-card-description">Se estreno el podscast de Oasis Stereo FHC.</p>
-        <div class="ftr">
-            <div class="author">
-                <a href="https://www.fundacionhogaresclaret.com/"> <img src="./assets/img/claret.png" alt="..." class="avatar img-raised"> <span>Oasis</span> </a>
+        </section>
+        <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-2s">
+            <h2 class="text-center mb-4">Noticias Del Mundo</h2>
+            <div id="noticias-mundo-loader" class="text-center py-4">
+                <div class="spinner-border text-info" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
             </div>
-            <div class="stats"> <i class="far fa-clock"></i> 20/05/24 </div>
-        </div>
-    </div>
-</div>
-</div>
-
-    <div class="col-md-4">
-  <div class="blog-card blog-card-blog">
-    <div class="blog-card-image">
-        <a href="#"> <img class="img" src="assets/img/imagenemisora.jpg"> </a>
-        <div class="ripple-cont"></div>
-    </div>
-    <div class="blog-table">
-        <h6 class="blog-category blog-text-success"><i class="far fa-newspaper"></i> Noticias</h6>
-        <h4 class="blog-card-caption">
-            <a href="#">Se estrena la seccion de noticias en la radio Oasis Stereo FHC</a>
-        </h4>
-        <p class="blog-card-description">El 28 de mayo se estreno nuestra seccion de noticias donde puede ver las noticias de la fundacion y ademas las noticias del mundo</p>
-        <div class="ftr">
-            <div class="author">
-                <a href="https://www.fundacionhogaresclaret.com/"> <img src="./assets/img/claret.png" alt="..." class="avatar img-raised"> <span>Oasis</span> </a>
+            <div id="noticias-mundo-widget" style="display:none"></div>
+        </section>
+        <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-3s">
+            <h2 class="text-center mb-4">Junior</h2>
+            <div class="ratio ratio-16x9 mb-3">
+                <iframe src="https://footystats.org/es/api/club?id=2131" title="Junior" style="border-radius:12px;" frameborder="0" loading="lazy"></iframe>
             </div>
-            <div class="stats"> <i class="far fa-clock"></i> 20/05/24 </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
+            <div id="fs-upcoming" class="d-flex justify-content-center"></div>
+        </section>
+        <section class="container mt-5 mb-5 animate__animated animate__fadeInUp animate__delay-4s">
+            <h2 class="text-center mb-4">Deportes</h2>
+            <div id="ls-widget" data-w="awo_w5396_666093fc53149" class="livescore-widget"></div>
+        </section>
+    </main>
+    <div id="footerpad"></div>
+    <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer onload="document.getElementById('noticias-mundo-loader').style.display='none';document.getElementById('noticias-mundo-widget').style.display='block';"></script>
+    <script type="text/javascript" src="https://ls.soccersapi.com/widget/res/awo_w5396_666093fc53149/widget.js" defer></script>
+    <style>
+        /* Responsive cards for noticias */
+        #noticias-cards-row .card {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 #00bfff22, 0 1.5px 12px 0 #23272f33;
+            background: rgba(30,32,38,0.92);
+            border: 1px solid #23272f;
+            margin-bottom: 0;
+        }
 
-<div class="container">
-    <h1 class="text-black">Noticias Del Mundo</h1>
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-6a938566-318b-44a0-bc39-43f956078b27" data-elfsight-app-lazy></div>
-</div>
+        #noticias-cards-row .card-img-top {
+            border-radius: 18px 18px 0 0;
+        }
 
-<div class = "container">
-    <h1 class="text-black">Junior</h1>
-    <iframe src="https://footystats.org/es/api/club?id=2131" height="100%" width="100%" style="height:420px; width:100%;" frameborder="0"></iframe>
-    <div id="fs-upcoming" style="align-items: center; display: flex; justify-content: center"></div> <script> (function (w,d,s,o,f,js,fjs) { w['fsUpcomingEmbed']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) }; js = d.createElement(s), fjs = d.getElementsByTagName(s)[0]; js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs); }(window, document, 'script', 'fsUpcoming', 'https://cdn.footystats.org/embeds/upcoming-loc.js')); fsUpcoming('params', { teamID: 2131, lang: 'es' }); </script>
-</div>
+        #noticias-cards-row .card-body {
+            color: #e0e0e0;
+            background: transparent;
+        }
 
-<div class="container">
-    <h1 class="text-black">Deportes</h1>
-<!-- LIVESCORE WIDGET SOCCERSAPI.COM -->
-<div id="ls-widget" data-w="awo_w5396_666093fc53149" class="livescore-widget"></div>
-<script type="text/javascript" src="https://ls.soccersapi.com/widget/res/awo_w5396_666093fc53149/widget.js"></script>
-<!-- LIVESCORE WIDGET SOCCERSAPI.COM -->
-</div>
-</main>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+        #noticias-cards-row .card-title,
+        #noticias-cards-row .card-text,
+        #noticias-cards-row .text-info,
+        #noticias-cards-row .author span,
+        #noticias-cards-row .stats {
+            color: #e0e0e0 !important;
+        }
+
+        #noticias-cards-row .card-title {
+            font-family: 'Roboto Slab', Impact, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.18rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #noticias-cards-row .card-text {
+            font-size: 1.01rem;
+        }
+
+        #noticias-cards-row .author span {
+            font-size: 0.98rem;
+        }
+
+        #noticias-cards-row .stats {
+            font-size: 0.95rem;
+        }
+
+        #noticias-cards-row .card-body h6.text-info {
+            color: var(--color-accent2) !important;
+            font-size: 0.98rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 991px) {
+            #noticias-cards-row .card-img-top {
+                height: 160px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #noticias-cards-row .card-img-top {
+                height: 120px !important;
+            }
+
+            #noticias-cards-row .card {
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            #noticias-cards-row .card-img-top {
+                height: 90px !important;
+            }
+
+            #noticias-cards-row .card {
+                border-radius: 8px;
+            }
+        }
+
+        .hero-noticias-section {
+            background: linear-gradient(120deg, #181c22 60%, #23272f 100%);
+            border-radius: 32px;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.13);
+            overflow: hidden;
+            min-height: 260px;
+            position: relative;
+        }
+        .hero-img-wrapper {
+            position: relative;
+            background: linear-gradient(135deg, #23272f 60%, #181c22 100%);
+            min-height: 220px;
+            max-height: 380px;
+            overflow: hidden;
+            border-radius: 0 32px 32px 0;
+            box-shadow: 0 8px 32px #00bfff22;
+        }
+        .hero-img-noticias {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 220px;
+            max-height: 380px;
+            border-radius: 0 32px 32px 0;
+            filter: brightness(0.7) contrast(1.12) saturate(1.18) grayscale(10%);
+            transition: filter 0.5s;
+            z-index: 1;
+            position: relative;
+        }
+        .hero-img-noticias:hover {
+            filter: brightness(0.85) contrast(1.18) saturate(1.25) grayscale(0%) blur(0.5px);
+        }
+        .hero-img-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, rgba(24,28,34,0.25) 60%, rgba(35,39,47,0.55) 100%);
+            z-index: 2;
+        }
+        .hero-img-logo-wrapper {
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            z-index: 3;
+            background: rgba(30,32,38,0.82);
+            border-radius: 18px;
+            box-shadow: 0 2px 12px #00bfff33;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-img-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px #00bfff88);
+        }
+        @media (max-width: 991px) {
+            .hero-img-wrapper, .hero-img-noticias {
+                border-radius: 0 18px 18px 0;
+                min-height: 160px;
+                max-height: 220px;
+            }
+            .hero-img-logo {
+                width: 44px; height: 44px;
+            }
+        }
+        @media (max-width: 767px) {
+            .hero-img-wrapper, .hero-img-noticias {
+                border-radius: 12px 12px 0 0;
+                min-height: 120px;
+                max-height: 160px;
+            }
+            .hero-img-logo-wrapper {
+                bottom: 8px; right: 8px; padding: 6px 10px;
+            }
+            .hero-img-logo {
+                width: 32px; height: 32px;
+            }
+        }
+        @media (max-width: 575px) {
+            .hero-img-wrapper, .hero-img-noticias {
+                border-radius: 8px 8px 0 0;
+                min-height: 80px;
+                max-height: 120px;
+            }
+            .hero-img-logo-wrapper {
+                bottom: 4px; right: 4px; padding: 3px 6px;
+            }
+            .hero-img-logo {
+                width: 22px; height: 22px;
+            }
+        }
+        .hero-title {
+            color: #fff;
+            font-family: 'Roboto Slab', Impact, Arial, sans-serif;
+            font-size: 2.6rem;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 16px #00bfff44;
+            background: linear-gradient(90deg, #00bfff 0%, #70A1FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-hr {
+            width: 70px;
+            border: 2.5px solid #70A1FF;
+            opacity: 0.8;
+            margin: 0 auto 18px auto;
+        }
+        .hero-desc {
+            color: #e0e0e0;
+            font-size: 1.18rem;
+            max-width: 440px;
+            margin-bottom: 0;
+        }
+        .brand-gradient {
+            background: linear-gradient(90deg, #00bfff 0%, #70A1FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        @media (max-width: 991px) {
+            .hero-noticias-section {
+                border-radius: 18px;
+            }
+            .hero-img-wrapper, .hero-content-wrapper {
+                border-radius: 0 18px 18px 0;
+            }
+            .hero-img-noticias {
+                border-radius: 0 18px 18px 0;
+                min-height: 160px;
+                max-height: 220px;
+            }
+            .hero-title { font-size: 2rem; }
+        }
+        @media (max-width: 767px) {
+            .hero-noticias-section {
+                flex-direction: column;
+                border-radius: 12px;
+            }
+            .hero-img-wrapper, .hero-content-wrapper {
+                border-radius: 12px 12px 0 0;
+            }
+            .hero-img-noticias {
+                border-radius: 12px 12px 0 0;
+                min-height: 120px;
+                max-height: 160px;
+            }
+            .hero-title { font-size: 1.4rem; }
+        }
+        @media (max-width: 575px) {
+            .hero-noticias-section {
+                border-radius: 8px;
+            }
+            .hero-img-wrapper, .hero-content-wrapper {
+                border-radius: 8px 8px 0 0;
+            }
+            .hero-img-noticias {
+                border-radius: 8px 8px 0 0;
+                min-height: 80px;
+                max-height: 120px;
+            }
+            .hero-title { font-size: 1.1rem; }
+            .hero-desc { font-size: 0.98rem; }
+        }
+    </style>
+    <script>
+        // Soluciona error de carga AJAX: fuerza recarga completa si el contenido principal no se renderiza bien
+        document.addEventListener('DOMContentLoaded', function () {
+            var main = document.getElementById('main-content');
+            if (!main || main.offsetHeight < 100 || !document.getElementById('noticias-cards-row')) {
+                window.location.reload();
+            }
+        });
+        // Carga asíncrona de widget de noticias del mundo
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                var el = document.querySelector('.elfsight-app-6a938566-318b-44a0-bc39-43f956078b27');
+                if (el) {
+                    document.getElementById('noticias-mundo-widget').appendChild(el);
+                    document.getElementById('noticias-mundo-loader').style.display = 'none';
+                    document.getElementById('noticias-mundo-widget').style.display = 'block';
+                }
+            }, 1200);
+        });
+        // Animación de scroll suave
+        if ('scrollBehavior' in document.documentElement.style) {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        }
+    </script>
 </body>
 
 </html>
