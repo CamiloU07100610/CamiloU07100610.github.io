@@ -1,27 +1,37 @@
 // Navegación AJAX dinámica y carga de secciones
 document.addEventListener('DOMContentLoaded', function () {
+    // Utilidad: detectar si es táctil
+    function isTouchDevice() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }
+
     // Navegación AJAX para enlaces internos
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
+        link.addEventListener(isTouchDevice() ? 'touchstart' : 'click', function(e) {
             const href = link.getAttribute('href');
-            // Cierra el menú hamburguesa inmediatamente al hacer clic
+            // Cierra el menú hamburguesa inmediatamente al hacer clic/touch
             var navbarCollapse = document.getElementById('navcol-1');
-            if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+            if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
                 new bootstrap.Collapse(navbarCollapse).hide();
             }
-            // Forzar quitar el overlay de Bootstrap en móvil (solución para Android)
             setTimeout(function() {
                 document.body.classList.remove('modal-open');
                 document.body.style.overflow = '';
                 let backdrops = document.querySelectorAll('.modal-backdrop, .offcanvas-backdrop, .navbar-backdrop');
-                backdrops.forEach(b => b.parentNode.removeChild(b));
+                backdrops.forEach(b => b.parentNode && b.parentNode.removeChild(b));
             }, 350);
-            if (href && href.endsWith('.html')) {
+            // Solo AJAX para enlaces internos .html
+            if (href && href.match(/^(\.|\/)[^:]+\.html$/)) {
                 e.preventDefault();
-                loadSection(href);
-                history.pushState(null, '', href);
+                // En móvil, recarga completa para evitar problemas de AJAX
+                if (window.innerWidth < 992) {
+                    window.location.href = href;
+                } else {
+                    loadSection(href);
+                    history.pushState(null, '', href);
+                }
             }
-        });
+        }, {passive:true});
     });
 
     // Soporte para navegación con el botón atrás/adelante
@@ -48,24 +58,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 let content = temp.querySelector('main') || temp.querySelector('section') || temp;
                 mainContainer.innerHTML = content.innerHTML;
                 window.scrollTo({top:0,behavior:'smooth'});
+                // Vuelve a cargar el footer y comentarios si corresponde
+                loadFooter();
+                if (document.getElementById('ajax-comments-container')) {
+                    loadComments();
+                }
             });
     }
-
-    // Responsive: cerrar menú al hacer clic en un enlace en móvil (más rápido)
-    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
-        link.addEventListener('touchstart', function() {
-            var navbarCollapse = document.getElementById('navcol-1');
-            if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
-                new bootstrap.Collapse(navbarCollapse).hide();
-            }
-        }, {passive:true});
-    });
 
     // Cargar footer dinámicamente en todas las páginas
     function loadFooter() {
         fetch('assets/ajax/footer.html')
             .then(res => res.text())
             .then(html => {
+                // Elimina footers duplicados
+                document.querySelectorAll('#footerpad').forEach((f, i) => {
+                    if (i > 0) f.remove();
+                });
                 let footer = document.getElementById('footerpad');
                 if (!footer) {
                     footer = document.createElement('div');
@@ -76,38 +85,19 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Ejecutar al cargar la página
-    loadFooter();
-
-    // AJAX para cargar comentarios (solo en index)
-    if (document.getElementById('ajax-comments-container')) {
+    // Cargar comentarios solo en index
+    function loadComments() {
         fetch('assets/ajax/comments.html')
             .then(res => res.text())
             .then(html => {
-                document.getElementById('ajax-comments-container').innerHTML = html;
+                var cont = document.getElementById('ajax-comments-container');
+                if (cont) cont.innerHTML = html;
             });
     }
 
-    // Enviar solicitud de canción por AJAX
-    function bindSongRequestForm() {
-        var form = document.querySelector('.cc_request_form');
-        if (!form) return;
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var data = new FormData(form);
-            fetch('https://halo.streamerr.co/public/oasisstereo/request', {
-                method: 'POST',
-                body: data
-            })
-            .then(res => res.ok ? res.text() : Promise.reject())
-            .then(() => {
-                form.querySelector('[data-type="result"]').innerHTML =
-                    '<div class="alert alert-success animate__animated animate__fadeIn">¡Solicitud enviada!</div>';
-            })
-            .catch(() => {
-                form.querySelector('[data-type="result"]').innerHTML =
-                    '<div class="alert alert-danger animate__animated animate__fadeIn">Error al enviar.</div>';
-            });
-        });
+    // Ejecutar al cargar la página
+    loadFooter();
+    if (document.getElementById('ajax-comments-container')) {
+        loadComments();
     }
 });
