@@ -84,6 +84,9 @@
     <meta name="twitter:title" content="Noticias - Oasis Stereo FHC">
     <meta name="twitter:description" content="Noticias institucionales y del mundo en la radio Oasis Stereo FHC. Fundación Hogares Claret.">
     <meta name="twitter:image" content="https://oasisstereofhc.com/assets/img/imagenemisora.jpg">
+    <meta name="author" content="Fundación Hogares Claret">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 
 <body>
@@ -92,7 +95,7 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R2S2LVS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar" aria-label="Menú principal">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
                 <picture>
@@ -116,7 +119,7 @@
             </div>
         </div>
     </nav>
-    <main class="container-fluid px-0" id="main-content" style="margin-top:90px;" aria-label="Noticias y contenido principal">
+    <main class="container-fluid px-0" id="main-content" style="margin-top:90px;" aria-label="Noticias y contenido principal" tabindex="-1">
         <section class="row align-items-center g-0 animate__animated animate__fadeInUp hero-noticias-section" style="margin-top: 32px; margin-bottom: 32px;">
             <div class="col-12 col-md-6 p-0 order-md-2 d-flex align-items-stretch hero-img-wrapper position-relative">
                 <picture>
@@ -249,7 +252,36 @@
             <div id="ls-widget" data-w="awo_w5396_666093fc53149" class="livescore-widget"></div>
         </section>
     </main>
-    <div id="footerpad"></div>
+    <footer id="footerpad" class="footer-elegante" aria-label="Pie de página principal">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-8 text-center mx-auto">
+                    <ul class="list-inline text-center footer-social-icons" aria-label="Redes sociales">
+                        <li class="list-inline-item">
+                            <a aria-label="Facebook" href="https://www.facebook.com/FundacionHogaresClaret/?locale=es_LA" target="_blank" class="footer-icon facebook" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a aria-label="Youtube" href="https://www.youtube.com/channel/UCjhMU_Q0JlKpTm2Ma1rJe9A" target="_blank" class="footer-icon youtube" rel="noopener noreferrer">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a aria-label="Instagram" href="https://www.instagram.com/fundacionhogaresclaret/?hl=es-la" target="_blank" class="footer-icon instagram" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted text-center">Copyright (C) 2024 Camilo Morales - All Rights Reserved</p>
+                    <a href="mailto:pedagogiaoasis@gmail.com">
+                        <img width="auto" height="auto" alt="Logo de la Fundación Hogares Claret" class="img-fluid" src="./assets/img/logo1-fotor-20240523105336.png">
+                    </a>
+                    <p class="color: white;">Sugerencias</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer onload="document.getElementById('noticias-mundo-loader').style.display='none';document.getElementById('noticias-mundo-widget').style.display='block';"></script>

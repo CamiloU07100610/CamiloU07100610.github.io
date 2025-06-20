@@ -105,6 +105,9 @@
         --font-main: 'Roboto', Arial, sans-serif;
         --font-title: 'Roboto Slab', Impact, Arial, sans-serif;
     }</style>
+    <meta name="author" content="Fundación Hogares Claret">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 
 <body>
@@ -114,7 +117,7 @@
             style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar" aria-label="Menú principal">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#"><img width="48" height="48"
                     alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.webp" loading="lazy"> <span>Oasis
@@ -137,14 +140,44 @@
             </div>
         </div>
     </nav>
-    <main style="margin-top:90px;" aria-label="Preguntas frecuentes sobre Oasis Stereo FHC">
+    <main style="margin-top:90px;" aria-label="Preguntas frecuentes sobre Oasis Stereo FHC" tabindex="-1">
         <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-1s">
             <h1 class="text-center mb-4" style="color:var(--color-title);text-shadow:0 2px 12px #00bfff44;">Preguntas Frecuentes</h1>
             <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
             <div class="commonninja_component pid-7ec05276-3a0f-46e5-a6a2-377f4b23be74" style="margin-top: 30px"></div>
         </section>
     </main>
-    <div id="footerpad"></div>
+
+    <footer id="footerpad" class="footer-elegante" aria-label="Pie de página principal">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-8 text-center mx-auto">
+                    <ul class="list-inline text-center footer-social-icons" aria-label="Redes sociales">
+                        <li class="list-inline-item">
+                            <a aria-label="Facebook" href="https://www.facebook.com/FundacionHogaresClaret/?locale=es_LA" target="_blank" class="footer-icon facebook" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a aria-label="Youtube" href="https://www.youtube.com/channel/UCjhMU_Q0JlKpTm2Ma1rJe9A" target="_blank" class="footer-icon youtube" rel="noopener noreferrer">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a aria-label="Instagram" href="https://www.instagram.com/fundacionhogaresclaret/?hl=es-la" target="_blank" class="footer-icon instagram" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted text-center">Copyright (C) 2024 Camilo Morales - All Rights Reserved</p>
+                    <a href="mailto:pedagogiaoasis@gmail.com">
+                        <img width="auto" height="auto" alt="Logo de la Fundación Hogares Claret" class="img-fluid" src="./assets/img/logo1-fotor-20240523105336.png">
+                    </a>
+                    <p class="color: white;">Sugerencias</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 </body>
