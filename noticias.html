@@ -26,18 +26,22 @@
     <meta itemprop="name" content="IETAC" />
     <meta itemprop="image" content="./assets/img/imagen emisora.jpg" />
     <title>Oasis Stereo FHC Noticias</title>
-    <!-- Preconexión a recursos externos -->
+    <!-- Preconexión a recursos externos y fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload de fuentes para evitar FOUT/FOIT -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="font" href="assets/fonts/fa-solid-900.woff2" type="font/woff2" crossorigin>
     <!-- CSS crítico -->
     <link rel="preload" href="assets/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </noscript>
     <!-- Fuentes e iconos -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet" media="all" async>
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="assets/css/fonts-local.css">
     <link rel="shortcut icon" href="./assets/img/symbol.ico">
@@ -55,42 +59,7 @@
     <meta name="theme-color" content="#181c22">
     <meta name="color-scheme" content="dark light">
     <!-- Paleta y variables CSS modernas -->
-    <style>:root {
-        --color-bg: #181c22;
-        --color-bg2: #23272f;
-        --color-accent: #00bfff;
-        --color-accent2: #70A1FF;
-        --color-card: rgba(30,32,38,0.92);
-        --color-card-glass: rgba(30,32,38,0.75);
-        --color-text: #e0e0e0;
-        --color-title: #00bfff;
-        --color-footer: #23272f;
-        --color-navbar: #181c22;
-        --color-navbar2: #23272f;
-        --color-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17), 0 1.5px 12px 0 #007bff22;
-        --radius-main: 22px;
-        --radius-card: 18px;
-        --radius-btn: 10px;
-        --font-main: 'Roboto', Arial, sans-serif;
-        --font-title: 'Roboto Slab', Impact, Arial, sans-serif;
-    }</style>
-    <!--
-    # OPTIMIZACIÓN DE CACHÉ (Configura en tu servidor):
-    # Apache ejemplo en .htaccess:
-    # <IfModule mod_expires.c>
-    # ExpiresActive On
-    # ExpiresByType image/webp "access plus 1 year"
-    # ExpiresByType image/jpeg "access plus 1 year"
-    # ExpiresByType image/png "access plus 1 year"
-    # ExpiresByType text/css "access plus 1 year"
-    # ExpiresByType application/javascript "access plus 1 year"
-    # </IfModule>
-    # Nginx ejemplo:
-    # location ~* \.(?:jpg|jpeg|gif|png|webp|css|js)$ {
-    #   expires 365d;
-    #   add_header Cache-Control "public, no-transform";
-    # }
-    -->
+    <style>:root{--color-bg:#181c22;--color-bg2:#23272f;--color-accent:#00bfff;--color-accent2:#70A1FF;--color-card:rgba(30,32,38,0.92);--color-card-glass:rgba(30,32,38,0.75);--color-text:#e0e0e0;--color-title:#00bfff;--color-footer:#23272f;--color-navbar:#181c22;--color-navbar2:#23272f;--color-shadow:0 8px 32px 0 rgba(31,38,135,0.17),0 1.5px 12px 0 #007bff22;--radius-main:22px;--radius-card:18px;--radius-btn:10px;--font-main:'Roboto',Arial,sans-serif;--font-title:'Roboto Slab',Impact,Arial,sans-serif;}</style>
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://oasisstereofhc.com/noticias.html">
     <meta property="og:title" content="Noticias - Oasis Stereo FHC">
@@ -118,7 +87,7 @@
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
                 <picture>
                     <source srcset="./assets/img/logo1.webp" type="image/webp">
-                    <img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy" decoding="async">
+                    <img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.webp" loading="lazy" decoding="async">
                 </picture>
                 <span>Oasis Stereo FHC</span>
             </a>
@@ -142,13 +111,13 @@
             <div class="col-12 col-md-6 p-0 order-md-2 d-flex align-items-stretch hero-img-wrapper position-relative">
                 <picture>
                     <source srcset="assets/img/imagenemisora.webp" type="image/webp">
-                    <img class="hero-img-noticias" src="assets/img/imagenemisora.jpg" alt="Emisora Oasis Stereo FHC" width="600" height="380" loading="lazy" decoding="async">
+                    <img class="hero-img-noticias" src="assets/img/imagenemisora.webp" alt="Emisora Oasis Stereo FHC" width="600" height="380" loading="eager" decoding="async" style="object-fit:cover;max-width:100%;height:auto;filter:brightness(0.8) contrast(1.1) saturate(1.1);border-radius:24px;box-shadow:0 8px 32px #00bfff33;">
                 </picture>
-                <div class="hero-img-overlay"></div>
-                <div class="hero-img-logo-wrapper">
+                <div class="hero-img-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(24,28,34,0.25) 60%,rgba(35,39,47,0.55) 100%);z-index:2;"></div>
+                <div class="hero-img-logo-wrapper" style="position:absolute;bottom:18px;right:18px;z-index:3;background:rgba(30,32,38,0.82);border-radius:18px;box-shadow:0 2px 12px #00bfff33;padding:10px 18px;display:flex;align-items:center;justify-content:center;">
                     <picture>
                         <source srcset="assets/img/logo1.webp" type="image/webp">
-                        <img src="assets/img/logo1.png" alt="Logo Oasis Stereo FHC" class="hero-img-logo" width="60" height="60" loading="lazy" decoding="async">
+                        <img src="assets/img/logo1.webp" alt="Logo Oasis Stereo FHC" class="hero-img-logo" width="60" height="60" loading="lazy" decoding="async" style="filter:drop-shadow(0 2px 8px #00bfff88);object-fit:contain;">
                     </picture>
                 </div>
             </div>
@@ -165,7 +134,7 @@
                     <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
                         <picture>
                             <source srcset="assets/img/imagenemisora.webp" type="image/webp">
-                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 1" width="400" height="200" loading="lazy" decoding="async" style="height:200px;object-fit:cover;">
+                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.webp" alt="Noticia 1" width="400" height="200" loading="lazy" decoding="async" style="height:200px;object-fit:cover;">
                         </picture>
                         <div class="card-body d-flex flex-column">
                             <h6 class="text-info mb-2"><i class="far fa-newspaper"></i> Noticias</h6>
@@ -176,7 +145,7 @@
                                     <a href="https://www.fundacionhogaresclaret.com/">
                                         <picture>
                                             <source srcset="./assets/img/claret.webp" type="image/webp">
-                                            <img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" decoding="async" style="width:32px;height:32px;border-radius:50%;">
+                                            <img src="./assets/img/claret.webp" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" decoding="async" style="width:32px;height:32px;border-radius:50%;">
                                         </picture>
                                         <span>Oasis</span>
                                     </a>
@@ -190,7 +159,7 @@
                     <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
                         <picture>
                             <source srcset="assets/img/imagenemisora.webp" type="image/webp">
-                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 2" width="400" height="200" loading="lazy" decoding="async" style="height:200px;object-fit:cover;">
+                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.webp" alt="Noticia 2" width="400" height="200" loading="lazy" decoding="async" style="height:200px;object-fit:cover;">
                         </picture>
                         <div class="card-body d-flex flex-column">
                             <h6 class="text-info mb-2"><i class="fas fa-blog"></i> Noticias</h6>
@@ -201,7 +170,7 @@
                                     <a href="https://www.fundacionhogaresclaret.com/">
                                         <picture>
                                             <source srcset="./assets/img/claret.webp" type="image/webp">
-                                            <img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" decoding="async" style="width:32px;height:32px;border-radius:50%;">
+                                            <img src="./assets/img/claret.webp" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" decoding="async" style="width:32px;height:32px;border-radius:50%;">
                                         </picture>
                                         <span>Oasis</span>
                                     </a>
@@ -215,7 +184,7 @@
                     <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
                         <picture>
                             <source srcset="assets/img/imagenemisora.webp" type="image/webp">
-                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 3" width="400" height="200" loading="lazy" decoding="async" style="height:200px;object-fit:cover;">
+                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.webp" alt="Noticia 3" width="400" height="200" loading="lazy" decoding="async" style="height:200px;object-fit:cover;">
                         </picture>
                         <div class="card-body d-flex flex-column">
                             <h6 class="text-info mb-2"><i class="far fa-newspaper"></i> Noticias</h6>
@@ -226,7 +195,7 @@
                                     <a href="https://www.fundacionhogaresclaret.com/">
                                         <picture>
                                             <source srcset="./assets/img/claret.webp" type="image/webp">
-                                            <img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" decoding="async" style="width:32px;height:32px;border-radius:50%;">
+                                            <img src="./assets/img/claret.webp" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" decoding="async" style="width:32px;height:32px;border-radius:50%;">
                                         </picture>
                                         <span>Oasis</span>
                                     </a>
@@ -246,7 +215,7 @@
                 </div>
             </div>
             <div id="noticias-mundo-widget" style="display:none"></div>
-            <div id="google-news-widget">
+            <div id="google-news-widget" aria-live="polite">
                 <ul id="news-list">
                     <li>Cargando noticias...</li>
                 </ul>
@@ -257,7 +226,7 @@
                     </div>
                 </div>
             </div>
-         </section>
+        </section>
         <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-3s">
             <h2 class="text-center mb-4">Junior</h2>
             <div class="ratio ratio-16x9 mb-3">
@@ -270,32 +239,32 @@
             <div id="ls-widget" data-w="awo_w5396_666093fc53149" class="livescore-widget"></div>
         </section>
     </main>
-    <footer id="footerpad" class="footer-elegante" aria-label="Pie de página principal">
+    <footer id="footerpad" class="footer-elegante" aria-label="Pie de página principal" style="background:linear-gradient(120deg,#23272f 60%,#181c22 100%);border-radius:24px 24px 0 0;box-shadow:0 -4px 24px #00bfff22;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-8 text-center mx-auto">
                     <ul class="list-inline text-center footer-social-icons" aria-label="Redes sociales">
                         <li class="list-inline-item">
-                            <a aria-label="Facebook" href="https://www.facebook.com/FundacionHogaresClaret/?locale=es_LA" target="_blank" class="footer-icon facebook" rel="noopener noreferrer">
+                            <a aria-label="Facebook" href="https://www.facebook.com/FundacionHogaresClaret/?locale=es_LA" target="_blank" class="footer-icon facebook" rel="noopener noreferrer" style="font-size:1.5rem;color:#1877f3;">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a aria-label="Youtube" href="https://www.youtube.com/channel/UCjhMU_Q0JlKpTm2Ma1rJe9A" target="_blank" class="footer-icon youtube" rel="noopener noreferrer">
+                            <a aria-label="Youtube" href="https://www.youtube.com/channel/UCjhMU_Q0JlKpTm2Ma1rJe9A" target="_blank" class="footer-icon youtube" rel="noopener noreferrer" style="font-size:1.5rem;color:#ff0000;">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a aria-label="Instagram" href="https://www.instagram.com/fundacionhogaresclaret/?hl=es-la" target="_blank" class="footer-icon instagram" rel="noopener noreferrer">
+                            <a aria-label="Instagram" href="https://www.instagram.com/fundacionhogaresclaret/?hl=es-la" target="_blank" class="footer-icon instagram" rel="noopener noreferrer" style="font-size:1.5rem;color:#e4405f;">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted text-center">Copyright (C) 2024 Camilo Morales - All Rights Reserved</p>
+                    <p class="copyright text-muted text-center" style="color:#e0e0e0;font-size:0.95rem;">Copyright (C) 2024 Camilo Morales - All Rights Reserved</p>
                     <a href="mailto:pedagogiaoasis@gmail.com">
-                        <img width="auto" height="auto" alt="Logo de la Fundación Hogares Claret" class="img-fluid" src="./assets/img/logo1-fotor-20240523105336.png" loading="lazy" decoding="async">
+                        <img width="auto" height="auto" alt="Logo de la Fundación Hogares Claret" class="img-fluid" src="./assets/img/logo1-fotor-20240523105336.png" loading="lazy" decoding="async" style="max-width:80px;filter:drop-shadow(0 2px 8px #00bfff88);margin:8px auto;display:block;">
                     </a>
-                    <p class="color: white;">Sugerencias</p>
+                    <p class="color: white;" style="color:#fff;font-size:1rem;">Sugerencias</p>
                 </div>
             </div>
         </div>
@@ -305,300 +274,8 @@
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer onload="document.getElementById('noticias-mundo-loader').style.display='none';document.getElementById('noticias-mundo-widget').style.display='block';"></script>
     <script type="text/javascript" src="https://ls.soccersapi.com/widget/res/awo_w5396_666093fc53149/widget.js" defer></script>
     <style>
-        /* Responsive cards for noticias */
-        #noticias-cards-row .card {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px 0 #00bfff22, 0 1.5px 12px 0 #23272f33;
-            background: rgba(30,32,38,0.92);
-            border: 1px solid #23272f;
-            margin-bottom: 0;
-        }
-
-        #noticias-cards-row .card-img-top {
-            border-radius: 18px 18px 0 0;
-        }
-
-        #noticias-cards-row .card-body {
-            color: #e0e0e0;
-            background: transparent;
-        }
-
-        #noticias-cards-row .card-title,
-        #noticias-cards-row .card-text,
-        #noticias-cards-row .text-info,
-        #noticias-cards-row .author span,
-        #noticias-cards-row .stats {
-            color: #e0e0e0 !important;
-        }
-
-        #noticias-cards-row .card-title {
-            font-family: 'Roboto Slab', Impact, Arial, sans-serif;
-            font-weight: 700;
-            font-size: 1.18rem;
-            margin-bottom: 0.5rem;
-        }
-
-        #noticias-cards-row .card-text {
-            font-size: 1.01rem;
-        }
-
-        #noticias-cards-row .author span {
-            font-size: 0.98rem;
-        }
-
-        #noticias-cards-row .stats {
-            font-size: 0.95rem;
-        }
-
-        #noticias-cards-row .card-body h6.text-info {
-            color: var(--color-accent2) !important;
-            font-size: 0.98rem;
-            font-weight: 600;
-        }
-
-        @media (max-width: 991px) {
-            #noticias-cards-row .card-img-top {
-                height: 160px !important;
-            }
-        }
-
-        @media (max-width: 767px) {
-            #noticias-cards-row .card-img-top {
-                height: 120px !important;
-            }
-
-            #noticias-cards-row .card {
-                border-radius: 12px;
-            }
-        }
-
-        @media (max-width: 575px) {
-            #noticias-cards-row .card-img-top {
-                height: 90px !important;
-            }
-
-            #noticias-cards-row .card {
-                border-radius: 8px;
-            }
-        }
-
-        .hero-noticias-section {
-            background: linear-gradient(120deg, #181c22 60%, #23272f 100%);
-            border-radius: 32px;
-            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.13);
-            overflow: hidden;
-            min-height: 260px;
-            position: relative;
-        }
-        .hero-img-wrapper {
-            position: relative;
-            background: linear-gradient(135deg, #23272f 60%, #181c22 100%);
-            min-height: 220px;
-            max-height: 380px;
-            overflow: hidden;
-            border-radius: 0 32px 32px 0;
-            box-shadow: 0 8px 32px #00bfff22;
-        }
-        .hero-img-noticias {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            min-height: 220px;
-            max-height: 380px;
-            border-radius: 0 32px 32px 0;
-            filter: brightness(0.7) contrast(1.12) saturate(1.18) grayscale(10%);
-            transition: filter 0.5s;
-            z-index: 1;
-            position: relative;
-        }
-        .hero-img-noticias:hover {
-            filter: brightness(0.85) contrast(1.18) saturate(1.25) grayscale(0%) blur(0.5px);
-        }
-        .hero-img-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(120deg, rgba(24,28,34,0.25) 60%, rgba(35,39,47,0.55) 100%);
-            z-index: 2;
-        }
-        .hero-img-logo-wrapper {
-            position: absolute;
-            bottom: 18px;
-            right: 18px;
-            z-index: 3;
-            background: rgba(30,32,38,0.82);
-            border-radius: 18px;
-            box-shadow: 0 2px 12px #00bfff33;
-            padding: 10px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-img-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 8px #00bfff88);
-        }
-        @media (max-width: 991px) {
-            .hero-img-wrapper, .hero-img-noticias {
-                border-radius: 0 18px 18px 0;
-                min-height: 160px;
-                max-height: 220px;
-            }
-            .hero-img-logo {
-                width: 44px; height: 44px;
-            }
-        }
-        @media (max-width: 767px) {
-            .hero-img-wrapper, .hero-img-noticias {
-                border-radius: 12px 12px 0 0;
-                min-height: 120px;
-                max-height: 160px;
-            }
-            .hero-img-logo-wrapper {
-                bottom: 8px; right: 8px; padding: 6px 10px;
-            }
-            .hero-img-logo {
-                width: 32px; height: 32px;
-            }
-        }
-        @media (max-width: 575px) {
-            .hero-img-wrapper, .hero-img-noticias {
-                border-radius: 8px 8px 0 0;
-                min-height: 80px;
-                max-height: 120px;
-            }
-            .hero-img-logo-wrapper {
-                bottom: 4px; right: 4px; padding: 3px 6px;
-            }
-            .hero-img-logo {
-                width: 22px; height: 22px;
-            }
-        }
-        .hero-title {
-            color: #fff;
-            font-family: 'Roboto Slab', Impact, Arial, sans-serif;
-            font-size: 2.6rem;
-            letter-spacing: 1.5px;
-            text-shadow: 0 2px 16px #00bfff44;
-            background: linear-gradient(90deg, #00bfff 0%, #70A1FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero-hr {
-            width: 70px;
-            border: 2.5px solid #70A1FF;
-            opacity: 0.8;
-            margin: 0 auto 18px auto;
-        }
-        .hero-desc {
-            color: #e0e0e0;
-            font-size: 1.18rem;
-            max-width: 440px;
-            margin-bottom: 0;
-        }
-        .brand-gradient {
-            background: linear-gradient(90deg, #00bfff 0%, #70A1FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: bold;
-        }
-        @media (max-width: 991px) {
-            .hero-noticias-section {
-                border-radius: 18px;
-            }
-            .hero-img-wrapper, .hero-content-wrapper {
-                border-radius: 0 18px 18px 0;
-            }
-            .hero-img-noticias {
-                border-radius: 0 18px 18px 0;
-                min-height: 160px;
-                max-height: 220px;
-            }
-            .hero-title { font-size: 2rem; }
-        }
-        @media (max-width: 767px) {
-            .hero-noticias-section {
-                flex-direction: column;
-                border-radius: 12px;
-            }
-            .hero-img-wrapper, .hero-content-wrapper {
-                border-radius: 12px 12px 0 0;
-            }
-            .hero-img-noticias {
-                border-radius: 12px 12px 0 0;
-                min-height: 120px;
-                max-height: 160px;
-            }
-            .hero-title { font-size: 1.4rem; }
-        }
-        @media (max-width: 575px) {
-            .hero-noticias-section {
-                border-radius: 8px;
-            }
-            .hero-img-wrapper, .hero-img-noticias {
-                border-radius: 8px 8px 0 0;
-                min-height: 80px;
-                max-height: 120px;
-            }
-            .hero-title { font-size: 1.1rem; }
-            .hero-desc { font-size: 0.98rem; }
-        }
-        #google-news-widget {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #f9f9f9;
-        }
-        #google-news-widget h2 {
-            font-size: 22px;
-            margin: 0 0 15px 0;
-            color: #212121;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        #google-news-widget ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        #google-news-widget li {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        #google-news-widget li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        #google-news-widget a {
-            text-decoration: none;
-            color: #1a0dab;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        #google-news-widget a:hover {
-            text-decoration: underline;
-        }
-        #google-news-widget p {
-            font-size: 14px;
-            color: #5f6368;
-            margin: 5px 0 0 0;
-        }
-        #google-news-widget .news-source {
-            font-size: 12px;
-            color: #3c4043;
-            font-style: italic;
-        }
+        /* Minificado y optimizado: solo reglas necesarias para la página */
+        #noticias-cards-row .card{min-height:100%;display:flex;flex-direction:column;border-radius:18px;box-shadow:0 4px 24px 0 #00bfff22,0 1.5px 12px 0 #23272f33;background:rgba(30,32,38,0.92);border:1px solid #23272f;margin-bottom:0}#noticias-cards-row .card-img-top{border-radius:18px 18px 0 0}#noticias-cards-row .card-body{color:#e0e0e0;background:transparent}#noticias-cards-row .card-title,#noticias-cards-row .card-text,#noticias-cards-row .text-info,#noticias-cards-row .author span,#noticias-cards-row .stats{color:#e0e0e0!important}#noticias-cards-row .card-title{font-family:'Roboto Slab',Impact,Arial,sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:0.5rem}#noticias-cards-row .card-text{font-size:1.01rem}#noticias-cards-row .author span{font-size:0.98rem}#noticias-cards-row .stats{font-size:0.95rem}#noticias-cards-row .card-body h6.text-info{color:var(--color-accent2)!important;font-size:0.98rem;font-weight:600}@media (max-width:991px){#noticias-cards-row .card-img-top{height:160px!important}}@media (max-width:767px){#noticias-cards-row .card-img-top{height:120px!important}#noticias-cards-row .card{border-radius:12px}}@media (max-width:575px){#noticias-cards-row .card-img-top{height:90px!important}#noticias-cards-row .card{border-radius:8px}}.hero-noticias-section{background:linear-gradient(120deg,#181c22 60%,#23272f 100%);border-radius:32px;box-shadow:0 8px 32px 0 rgba(31,38,135,0.13);overflow:hidden;min-height:260px;position:relative}.hero-img-wrapper{position:relative;background:linear-gradient(135deg,#23272f 60%,#181c22 100%);min-height:220px;max-height:380px;overflow:hidden;border-radius:0 32px 32px 0;box-shadow:0 8px 32px #00bfff22}.hero-img-noticias{width:100%;height:100%;object-fit:cover;min-height:220px;max-height:380px;border-radius:0 32px 32px 0;filter:brightness(0.7) contrast(1.12) saturate(1.18) grayscale(10%);transition:filter 0.5s;z-index:1;position:relative}.hero-img-noticias:hover{filter:brightness(0.85) contrast(1.18) saturate(1.25) grayscale(0%) blur(0.5px)}.hero-img-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(24,28,34,0.25) 60%,rgba(35,39,47,0.55) 100%);z-index:2}.hero-img-logo-wrapper{position:absolute;bottom:18px;right:18px;z-index:3;background:rgba(30,32,38,0.82);border-radius:18px;box-shadow:0 2px 12px #00bfff33;padding:10px 18px;display:flex;align-items:center;justify-content:center}.hero-img-logo{width:60px;height:60px;object-fit:contain;filter:drop-shadow(0 2px 8px #00bfff88)}@media (max-width:991px){.hero-img-wrapper,.hero-img-noticias{border-radius:0 18px 18px 0;min-height:160px;max-height:220px}.hero-img-logo{width:44px;height:44px}}@media (max-width:767px){.hero-img-wrapper,.hero-img-noticias{border-radius:12px 12px 0 0;min-height:120px;max-height:160px}.hero-img-logo-wrapper{bottom:8px;right:8px;padding:6px 10px}.hero-img-logo{width:32px;height:32px}}@media (max-width:575px){.hero-img-wrapper,.hero-img-noticias{border-radius:8px 8px 0 0;min-height:80px;max-height:120px}.hero-img-logo-wrapper{bottom:4px;right:4px;padding:3px 6px}.hero-img-logo{width:22px;height:22px}}.hero-title{color:#fff;font-family:'Roboto Slab',Impact,Arial,sans-serif;font-size:2.6rem;letter-spacing:1.5px;text-shadow:0 2px 16px #00bfff44;background:linear-gradient(90deg,#00bfff 0%,#70A1FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-hr{width:70px;border:2.5px solid #70A1FF;opacity:0.8;margin:0 auto 18px auto}.hero-desc{color:#e0e0e0;font-size:1.18rem;max-width:440px;margin-bottom:0}.brand-gradient{background:linear-gradient(90deg,#00bfff 0%,#70A1FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:bold}@media (max-width:991px){.hero-noticias-section{border-radius:18px}.hero-img-wrapper,.hero-content-wrapper{border-radius:0 18px 18px 0}.hero-img-noticias{border-radius:0 18px 18px 0;min-height:160px;max-height:220px}.hero-title{font-size:2rem}}@media (max-width:767px){.hero-noticias-section{flex-direction:column;border-radius:12px}.hero-img-wrapper,.hero-content-wrapper{border-radius:12px 12px 0 0}.hero-img-noticias{border-radius:12px 12px 0 0;min-height:120px;max-height:160px}.hero-title{font-size:1.4rem}}@media (max-width:575px){.hero-noticias-section{border-radius:8px}.hero-img-wrapper,.hero-img-noticias{border-radius:8px 8px 0 0;min-height:80px;max-height:120px}.hero-title{font-size:1.1rem}.hero-desc{font-size:0.98rem}}#google-news-widget{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;border:1px solid #ddd;border-radius:8px;padding:20px;max-width:600px;margin:20px auto;background-color:#f9f9f9}#google-news-widget h2{font-size:22px;margin:0 0 15px 0;color:#212121;border-bottom:2px solid #eee;padding-bottom:10px}#google-news-widget ul{list-style-type:none;padding:0;margin:0}#google-news-widget li{margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #eee}#google-news-widget li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}#google-news-widget a{text-decoration:none;color:#1a0dab;font-size:18px;font-weight:bold}#google-news-widget a:hover{text-decoration:underline}#google-news-widget p{font-size:14px;color:#5f6368;margin:5px 0 0 0}#google-news-widget .news-source{font-size:12px;color:#3c4043;font-style:italic}
     </style>
     <script>
         // Soluciona error de carga AJAX: fuerza recarga completa si el contenido principal no se renderiza bien
@@ -627,24 +304,17 @@
     <script>
     document.addEventListener("DOMContentLoaded", () => {
     const feedContainer = document.getElementById('feed-items');
-
-
     // 1. La URL del feed de El País
     const rssUrl = "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/america-colombia/portada";
-
     // 2. Usamos el proxy rss2json para convertir el RSS a JSON
     // Se debe "codificar" la URL para que funcione como parámetro
     // Para desarrollo local, usa un proxy CORS:
     const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
     fetch(apiUrl)
     .then(async response => {
-        // Intentar parsear como JSON, si falla mostrar error amigable
         try {
             const data = await response.json();
-            // Limpiamos el mensaje de "Cargando..."
             feedContainer.innerHTML = '';
-            // El API devuelve los posts en un array llamado "items"
             const items = data.items;
             if (!items || !Array.isArray(items)) throw new Error('No hay noticias disponibles.');
             items.forEach(item => {
