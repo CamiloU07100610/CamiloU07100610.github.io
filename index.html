@@ -36,6 +36,7 @@
     <!-- Fuentes e iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://player.radioking.io">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" media="print" onload="this.media='all'">
     <link rel="shortcut icon" href="./assets/img/symbol.ico">
@@ -82,7 +83,13 @@
     <!-- End Google Tag Manager (noscript) -->
     <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#"><img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy"> <span>Oasis Stereo FHC</span></a>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <picture>
+                    <source srcset="./assets/img/logo1.webp" type="image/webp">
+                    <img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy">
+                </picture>
+                <span>Oasis Stereo FHC</span>
+            </a>
             <button data-bs-toggle="collapse" class="navbar-toggler collapsed" data-bs-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -101,7 +108,10 @@
     <main style="margin-top:70px;">
         <section class="hero-section glass-section">
             <div class="hero-img-bg-wrapper">
-                <img src="./assets/img/imagenemisora.jpg" alt="Imagen principal" class="hero-img-bg" loading="lazy">
+                <picture>
+                    <source srcset="./assets/img/imagenemisora.webp" type="image/webp">
+                    <img src="./assets/img/imagenemisora.jpg" alt="Imagen principal" class="hero-img-bg" width="1200" height="420" loading="lazy">
+                </picture>
             </div>
             <div class="hero-content-below hero-content-below-responsive">
                 <h1>Oasis Stereo FHC</h1>
@@ -114,20 +124,17 @@
                     <div class="row w-100 justify-content-center">
                         <div class="col-12 col-md-10 col-xl-8 text-center d-flex justify-content-center align-items-center mx-auto">
                             <div id="radio-iframe-container" class="super-radio-iframe-container glass-card">
-                                <div class="responsive-radio-iframe-wrapper" style="min-width:0;max-width:100vw;padding:0 2vw;">
+                                <div class="responsive-radio-iframe-wrapper">
                                     <iframe src="https://player.radioking.io/oasis-stereo/?c=%2370A1FF&c2=%232F3542&f=h&i=0&p=1&s=1&li=1&popup=1&plc=NaN&h=undefined&l=750&v=2"
                                         class="responsive-radio-iframe"
                                         allow="autoplay"
                                         loading="lazy"
                                         title="Reproductor Oasis Stereo"
-                                        frameborder="0"
-                                        style="width:100%;min-width:0;max-width:100vw;min-height:70px;max-height:180px;display:block;border-radius:12px;background:transparent;">
-                                    </iframe>
+                                        width="100%" height="90" frameborder="0"></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
     </main>

@@ -34,10 +34,8 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </noscript>
     <!-- Fuentes e iconos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/fonts-local.css">
     <link rel="shortcut icon" href="./assets/img/symbol.ico">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPZKCC85ND"></script>
@@ -72,6 +70,9 @@
         --font-main: 'Roboto', Arial, sans-serif;
         --font-title: 'Roboto Slab', Impact, Arial, sans-serif;
     }</style>
+    <!-- Preconexión a recursos externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
@@ -82,7 +83,13 @@
     <!-- End Google Tag Manager (noscript) -->
     <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark shadow-sm animate__animated animate__fadeInDown glass-navbar">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#"><img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy"> <span>Oasis Stereo FHC</span></a>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <picture>
+                    <source srcset="./assets/img/logo1.webp" type="image/webp">
+                    <img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy">
+                </picture>
+                <span>Oasis Stereo FHC</span>
+            </a>
             <button data-bs-toggle="collapse" class="navbar-toggler collapsed" data-bs-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -101,10 +108,16 @@
     <main class="container-fluid px-0" id="main-content" style="margin-top:90px;">
         <section class="row align-items-center g-0 animate__animated animate__fadeInUp hero-noticias-section" style="margin-top: 32px; margin-bottom: 32px;">
             <div class="col-12 col-md-6 p-0 order-md-2 d-flex align-items-stretch hero-img-wrapper position-relative">
-                <img class="hero-img-noticias" src="assets/img/imagenemisora.jpg" alt="Emisora Oasis" loading="lazy">
+                <picture>
+                    <source srcset="assets/img/imagenemisora.webp" type="image/webp">
+                    <img class="hero-img-noticias" src="assets/img/imagenemisora.jpg" alt="Emisora Oasis" width="600" height="380" loading="lazy">
+                </picture>
                 <div class="hero-img-overlay"></div>
                 <div class="hero-img-logo-wrapper">
-                    <img src="assets/img/logo1.png" alt="Logo Oasis Stereo" class="hero-img-logo" loading="lazy">
+                    <picture>
+                        <source srcset="assets/img/logo1.webp" type="image/webp">
+                        <img src="assets/img/logo1.png" alt="Logo Oasis Stereo" class="hero-img-logo" width="60" height="60" loading="lazy">
+                    </picture>
                 </div>
             </div>
             <div class="col-12 col-md-6 order-md-1 d-flex flex-column justify-content-center align-items-center p-4 hero-content-wrapper">
@@ -118,14 +131,23 @@
             <div class="row g-4" id="noticias-cards-row">
                 <article class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
                     <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
-                        <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 1" loading="lazy" style="height:200px;object-fit:cover;">
+                        <picture>
+                            <source srcset="assets/img/imagenemisora.webp" type="image/webp">
+                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 1" width="400" height="200" loading="lazy" style="height:200px;object-fit:cover;">
+                        </picture>
                         <div class="card-body d-flex flex-column">
                             <h6 class="text-info mb-2"><i class="far fa-newspaper"></i> Noticias</h6>
                             <h4 class="card-title mb-2">Oasis Stereo FHC</h4>
                             <p class="card-text flex-grow-1">El día 15 de mayo se estrenó la radio oficial del centro oasis.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div class="author d-flex align-items-center gap-2">
-                                    <a href="https://www.fundacionhogaresclaret.com/"><img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" loading="lazy" style="width:32px;height:32px;border-radius:50%;"> <span>Oasis</span></a>
+                                    <a href="https://www.fundacionhogaresclaret.com/">
+                                        <picture>
+                                            <source srcset="./assets/img/claret.webp" type="image/webp">
+                                            <img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" style="width:32px;height:32px;border-radius:50%;">
+                                        </picture>
+                                        <span>Oasis</span>
+                                    </a>
                                 </div>
                                 <div class="stats"><i class="far fa-clock"></i> 15/05/24</div>
                             </div>
@@ -134,14 +156,23 @@
                 </article>
                 <article class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
                     <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
-                        <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 2" loading="lazy" style="height:200px;object-fit:cover;">
+                        <picture>
+                            <source srcset="assets/img/imagenemisora.webp" type="image/webp">
+                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 2" width="400" height="200" loading="lazy" style="height:200px;object-fit:cover;">
+                        </picture>
                         <div class="card-body d-flex flex-column">
                             <h6 class="text-info mb-2"><i class="fas fa-blog"></i> Noticias</h6>
                             <h4 class="card-title mb-2">Se estrenó la sección de podcast en la radio Oasis Stereo FHC</h4>
                             <p class="card-text flex-grow-1">Se estrenó el podcast de Oasis Stereo FHC.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div class="author d-flex align-items-center gap-2">
-                                    <a href="https://www.fundacionhogaresclaret.com/"><img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" loading="lazy" style="width:32px;height:32px;border-radius:50%;"> <span>Oasis</span></a>
+                                    <a href="https://www.fundacionhogaresclaret.com/">
+                                        <picture>
+                                            <source srcset="./assets/img/claret.webp" type="image/webp">
+                                            <img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" style="width:32px;height:32px;border-radius:50%;">
+                                        </picture>
+                                        <span>Oasis</span>
+                                    </a>
                                 </div>
                                 <div class="stats"><i class="far fa-clock"></i> 20/05/24</div>
                             </div>
@@ -150,14 +181,23 @@
                 </article>
                 <article class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
                     <div class="card glass-card shadow-sm w-100 h-100 noticia-card-custom">
-                        <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 3" loading="lazy" style="height:200px;object-fit:cover;">
+                        <picture>
+                            <source srcset="assets/img/imagenemisora.webp" type="image/webp">
+                            <img class="card-img-top fit-cover" src="assets/img/imagenemisora.jpg" alt="Noticia 3" width="400" height="200" loading="lazy" style="height:200px;object-fit:cover;">
+                        </picture>
                         <div class="card-body d-flex flex-column">
                             <h6 class="text-info mb-2"><i class="far fa-newspaper"></i> Noticias</h6>
                             <h4 class="card-title mb-2">Se estrena la sección de noticias en la radio Oasis Stereo FHC</h4>
                             <p class="card-text flex-grow-1">El 28 de mayo se estrenó nuestra sección de noticias donde puede ver las noticias de la fundación y además las noticias del mundo.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div class="author d-flex align-items-center gap-2">
-                                    <a href="https://www.fundacionhogaresclaret.com/"><img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" loading="lazy" style="width:32px;height:32px;border-radius:50%;"> <span>Oasis</span></a>
+                                    <a href="https://www.fundacionhogaresclaret.com/">
+                                        <picture>
+                                            <source srcset="./assets/img/claret.webp" type="image/webp">
+                                            <img src="./assets/img/claret.png" alt="Claret" class="avatar img-raised" width="32" height="32" loading="lazy" style="width:32px;height:32px;border-radius:50%;">
+                                        </picture>
+                                        <span>Oasis</span>
+                                    </a>
                                 </div>
                                 <div class="stats"><i class="far fa-clock"></i> 28/05/24</div>
                             </div>
@@ -172,14 +212,20 @@
                 <div class="spinner-border text-info" role="status">
                     <span class="visually-hidden">Cargando...</span>
                 </div>
-                <div id="google-news-widget">
-                    <ul id="news-list">
-                        <li>Cargando noticias...</li>
-                    </ul>
+            </div>
+            <div id="noticias-mundo-widget" style="display:none"></div>
+            <div id="google-news-widget">
+                <ul id="news-list">
+                    <li>Cargando noticias...</li>
+                </ul>
+                <div id="feed-widget-container">
+                    <h2>Noticias de El País Colombia</h2>
+                    <div id="feed-items">
+                        <p style="text-align: center;">Cargando noticias...</p>
+                    </div>
                 </div>
             </div>
-
-        </section>
+         </section>
         <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-3s">
             <h2 class="text-center mb-4">Junior</h2>
             <div class="ratio ratio-16x9 mb-3">
@@ -521,51 +567,56 @@
         }
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // URL del feed RSS de Google News para noticias generales del mundo en español (edición de España para cobertura amplia)
-            const rssUrl = "https://news.google.com/rss?hl=es&gl=ES&ceid=ES:es";
+    document.addEventListener("DOMContentLoaded", () => {
+    const feedContainer = document.getElementById('feed-items');
 
-            // Usamos un servicio gratuito que convierte RSS a JSON y evita problemas de CORS
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
-            const newsList = document.getElementById("news-list");
+    // 1. La URL del feed de El País
+    const rssUrl = "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/america-colombia/portada";
 
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    newsList.innerHTML = ""; // Limpiar el mensaje "Cargando..."
-                    if (data.status === "ok") {
-                        // Limitar a los primeros 7 artículos
-                        const items = data.items.slice(0, 7);
-                        items.forEach(item => {
-                            const listItem = document.createElement("li");
+    // 2. Usamos el proxy rss2json para convertir el RSS a JSON
+    // Se debe "codificar" la URL para que funcione como parámetro
+    // Para desarrollo local, usa un proxy CORS:
+    const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
-                            // Crear el enlace
-                            const link = document.createElement("a");
-                            link.href = item.link;
-                            link.target = "_blank"; // Abrir en una nueva pestaña
-                            link.rel = "noopener noreferrer";
-                            link.textContent = item.title;
-
-                            // Crear el párrafo para la fuente y fecha
-                            const source = document.createElement("p");
-                            const pubDate = new Date(item.pubDate);
-                            source.className = "news-source";
-                            source.textContent = `${item.author || 'Google News'} - ${pubDate.toLocaleDateString('es-ES')}`;
-
-                            listItem.appendChild(link);
-                            listItem.appendChild(source);
-                            newsList.appendChild(listItem);
-                        });
-                    } else {
-                        newsList.innerHTML = "<li>No se pudieron cargar las noticias.</li>";
-                    }
-                })
-                .catch(error => {
-                    console.error("Error al cargar el feed de noticias:", error);
-                    newsList.innerHTML = "<li>Ocurrió un error al cargar las noticias.</li>";
-                });
-        });
+    fetch(apiUrl)
+    .then(async response => {
+        // Intentar parsear como JSON, si falla mostrar error amigable
+        try {
+            const data = await response.json();
+            // Limpiamos el mensaje de "Cargando..."
+            feedContainer.innerHTML = '';
+            // El API devuelve los posts en un array llamado "items"
+            const items = data.items;
+            if (!items || !Array.isArray(items)) throw new Error('No hay noticias disponibles.');
+            items.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('feed-item');
+                const titleElement = document.createElement('a');
+                titleElement.classList.add('feed-item-title');
+                titleElement.href = item.link;
+                titleElement.target = "_blank";
+                titleElement.textContent = item.title;
+                const dateElement = document.createElement('p');
+                dateElement.classList.add('feed-item-date');
+                dateElement.textContent = new Date(item.pubDate).toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
+                const descriptionElement = document.createElement('div');
+                descriptionElement.classList.add('feed-item-description');
+                descriptionElement.innerHTML = item.description;
+                itemElement.appendChild(titleElement);
+                itemElement.appendChild(dateElement);
+                itemElement.appendChild(descriptionElement);
+                feedContainer.appendChild(itemElement);
+            });
+        } catch (err) {
+            feedContainer.innerHTML = "<p>No se pudieron cargar las noticias (respuesta no válida del servidor o proxy CORS saturado).</p>";
+        }
+    })
+    .catch(error => {
+        console.error("Error al cargar el feed:", error);
+        feedContainer.innerHTML = "<p>No se pudieron cargar las noticias (error de red o CORS).</p>";
+    });
+    });
     </script>
 </body>
 
