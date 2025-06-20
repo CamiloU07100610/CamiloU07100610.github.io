@@ -26,7 +26,11 @@
     <meta itemprop="name" content="IETAC" />
     <meta itemprop="image" content="./assets/img/imagen emisora.jpg" />
     <title>Oasis Stereo FHC</title>
-    <!-- CSS crítico -->
+    <!-- Preconexión a recursos externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://player.radioking.io">
+    <!-- Preload y carga diferida de CSS crítico -->
     <link rel="preload" href="assets/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -34,10 +38,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </noscript>
     <!-- Fuentes e iconos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://player.radioking.io">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700&display=swap" rel="stylesheet" media="all">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" media="print" onload="this.media='all'">
     <link rel="shortcut icon" href="./assets/img/symbol.ico">
     <!-- Google Analytics -->
@@ -48,7 +49,6 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-GPZKCC85ND');
     </script>
     <meta name="theme-color" content="#181c22">
@@ -67,6 +67,23 @@
     <meta name="author" content="Fundación Hogares Claret">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <!--
+    # OPTIMIZACIÓN DE CACHÉ (Configura en tu servidor):
+    # Apache ejemplo en .htaccess:
+    # <IfModule mod_expires.c>
+    # ExpiresActive On
+    # ExpiresByType image/webp "access plus 1 year"
+    # ExpiresByType image/jpeg "access plus 1 year"
+    # ExpiresByType image/png "access plus 1 year"
+    # ExpiresByType text/css "access plus 1 year"
+    # ExpiresByType application/javascript "access plus 1 year"
+    # </IfModule>
+    # Nginx ejemplo:
+    # location ~* \.(?:jpg|jpeg|gif|png|webp|css|js)$ {
+    #   expires 365d;
+    #   add_header Cache-Control "public, no-transform";
+    # }
+    -->
     <!-- Paleta y variables CSS modernas -->
     <style>:root {
         --color-bg: #181c22;
@@ -100,7 +117,7 @@
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
                 <picture>
                     <source srcset="./assets/img/logo1.webp" type="image/webp">
-                    <img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy">
+                    <img width="48" height="48" alt="Logo de la fundación Hogares Claret" src="./assets/img/logo1.png" loading="lazy" decoding="async">
                 </picture>
                 <span>Oasis Stereo FHC</span>
             </a>
@@ -124,7 +141,7 @@
             <div class="hero-img-bg-wrapper">
                 <picture>
                     <source srcset="./assets/img/imagenemisora.webp" type="image/webp">
-                    <img src="./assets/img/imagenemisora.jpg" alt="Imagen principal de la radio Oasis Stereo FHC" class="hero-img-bg" width="1200" height="420" loading="lazy">
+                    <img src="./assets/img/imagenemisora.jpg" alt="Imagen principal de la radio Oasis Stereo FHC" class="hero-img-bg" width="1200" height="420" loading="lazy" decoding="async">
                 </picture>
             </div>
             <div class="hero-content-below hero-content-below-responsive">
@@ -144,7 +161,7 @@
                                         allow="autoplay"
                                         loading="lazy"
                                         title="Reproductor Oasis Stereo"
-                                        width="100%" height="90" frameborder="0"></iframe>
+                                        width="100%" height="90" frameborder="0" decoding="async"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -152,8 +169,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col-12 col-md-10 col-xl-8 text-center mx-auto">
-                    <p class="text-muted
-                        mb-0" style="font-size: 0.9rem; color: #c8e6fa;">
+                    <p class="text-muted mb-0" style="font-size: 0.9rem; color: #c8e6fa;">
                         Escucha nuestra radio en vivo y disfruta de la mejor música y contenido de la Fundación Hogares Claret.
                     </p>
                 </div>
@@ -184,16 +200,17 @@
                     </ul>
                     <p class="copyright text-muted text-center">Copyright (C) 2024 Camilo Morales - All Rights Reserved</p>
                     <a href="mailto:pedagogiaoasis@gmail.com">
-                        <img width="auto" height="auto" alt="Logo de la Fundación Hogares Claret" class="img-fluid" src="./assets/img/logo1-fotor-20240523105336.png">
+                        <img width="auto" height="auto" alt="Logo de la Fundación Hogares Claret" class="img-fluid" src="./assets/img/logo1-fotor-20240523105336.png" loading="lazy" decoding="async">
                     </a>
                     <p class="color: white;">Sugerencias</p>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- Minificación y defer en scripts -->
     <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
-    <script type="text/javascript" src="https://player.radioking.io/scripts/iframe.bundle.js"></script>
+    <script type="text/javascript" src="https://player.radioking.io/scripts/iframe.bundle.js" defer></script>
     <style>
         /* Responsive radio iframe wrapper */
         .responsive-radio-iframe-wrapper {
