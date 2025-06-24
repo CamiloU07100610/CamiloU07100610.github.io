@@ -124,13 +124,9 @@
                     <div class="row w-100 justify-content-center">
                         <div class="col-12 col-md-10 col-xl-8 text-center d-flex justify-content-center align-items-center mx-auto">
                             <div id="radio-iframe-container" class="super-radio-iframe-container glass-card">
-                                <div class="responsive-radio-iframe-wrapper">
-                                    <iframe src="https://player.radioking.io/oasis-stereo/?c=%2370A1FF&c2=%232F3542&f=h&i=0&p=1&s=1&li=1&popup=1&plc=NaN&h=undefined&l=750&v=2"
-                                        class="responsive-radio-iframe"
-                                        allow="autoplay"
-                                        loading="lazy"
-                                        title="Reproductor Oasis Stereo"
-                                        width="100%" height="90" frameborder="0" decoding="async"></iframe>
+                                <div class="responsive-radio-iframe-wrapper" id="radio-iframe-placeholder">
+                                    <!-- El reproductor se cargará aquí tras aceptar cookies -->
+                                    <div style="color:#c8e6fa;font-size:1rem;padding:18px 0;">Para escuchar la radio, acepta las cookies de terceros.</div>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +172,7 @@
             </div>
         </div>
     </footer>
-    <!-- Minificación y defer en scripts -->
+    <!-- El banner de cookies ahora se gestiona globalmente desde script.js -->
     <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script type="text/javascript" src="https://player.radioking.io/scripts/iframe.bundle.js" defer></script>
