@@ -220,6 +220,89 @@
             </div>
         </section>
     </main>
+    <!-- Sección de comentarios Disqus con estilo moderno y animación -->
+    <section class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div id="disqus_thread" class="disqus-modern-box animate-disqus"></div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Animación de aparición gradual para el box de Disqus
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var box = document.querySelector('.animate-disqus');
+          if (box) box.classList.add('disqus-visible');
+        }, 400);
+      });
+      /*
+      var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Reemplaza PAGE_URL con la URL canónica de tu página
+        this.page.identifier = PAGE_IDENTIFIER; // Reemplaza PAGE_IDENTIFIER con el identificador único de tu página
+      };
+      */
+      (function() { // NO EDITAR DEBAJO DE ESTA LÍNEA
+        var d = document, s = d.createElement('script');
+        s.src = 'https://oasis-stereo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Por favor habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios impulsados por Disqus.</a></noscript>
+    <style>
+      /* Estilo moderno y animación para el box de Disqus */
+      .disqus-modern-box {
+        background: linear-gradient(120deg, #23272f 60%, #181c22 100%);
+        border-radius: 22px;
+        box-shadow: 0 8px 32px 0 rgba(0,191,255,0.10), 0 1.5px 12px 0 #007bff22;
+        padding: 32px 18px 18px 18px;
+        margin: 0 auto 32px auto;
+        max-width: 100%;
+        min-height: 220px;
+        transition: box-shadow 0.3s, background 0.3s, opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+        border: 1.5px solid #00bfff33;
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+        filter: blur(2px);
+      }
+      .disqus-visible {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        filter: blur(0) !important;
+      }
+      .disqus-modern-box:before {
+        content: "💬 Comentarios";
+        display: block;
+        font-family: 'Roboto Slab', Impact, Arial, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #00bfff;
+        margin-bottom: 18px;
+        letter-spacing: 1.2px;
+        text-align: left;
+        background: linear-gradient(90deg,#00bfff 0%,#70A1FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .disqus-modern-box iframe {
+        border-radius: 14px !important;
+        box-shadow: 0 2px 16px #00bfff22 !important;
+        background: #23272f !important;
+      }
+      @media (max-width: 700px) {
+        .disqus-modern-box {
+          padding: 16px 4px 8px 4px;
+          border-radius: 12px;
+        }
+        .disqus-modern-box:before {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
     <footer id="footerpad" class="footer-elegante" aria-label="Pie de página principal" style="background:linear-gradient(120deg,#23272f 60%,#181c22 100%);border-radius:24px 24px 0 0;box-shadow:0 -4px 24px #00bfff22;">
         <div class="container">
             <div class="row">
