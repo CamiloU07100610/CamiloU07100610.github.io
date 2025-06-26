@@ -170,7 +170,46 @@
             </div>
         </div>
     </nav>
-    <main class="container-fluid px-0" id="main-content" style="margin-top:90px;" aria-label="Noticias y contenido principal" tabindex="-1">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container" style="margin-top: 80px">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright"><a href="https://es.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="whithe-text">Siga los mercados en trendingview</span></a></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                {
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "S&P 500 Index"
+                },
+                {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "US 100 Cash CFD"
+                },
+                {
+                    "proName": "FX_IDC:EURUSD",
+                    "title": "EUR to USD"
+                },
+                {
+                    "proName": "BITSTAMP:BTCUSD",
+                    "title": "Bitcoin"
+                },
+                {
+                    "proName": "BITSTAMP:ETHUSD",
+                    "title": "Ethereum"
+                }
+            ],
+                "colorTheme": "dark",
+                "locale": "es",
+                "largeChartUrl": "",
+                "isTransparent": true,
+                "showSymbolLogo": true,
+                "displayMode": "adaptive"
+            }
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
+    <main class="container-fluid px-0" id="main-content" style="margin-top:10px;" aria-label="Noticias y contenido principal" tabindex="-1">
+
         <section class="row align-items-center g-0 animate__animated animate__fadeInUp hero-noticias-section" style="margin-top: 32px; margin-bottom: 32px;">
             <div class="col-12 col-md-6 p-0 order-md-2 d-flex align-items-stretch">
                 <div class="card h-100 w-100 shadow-lg border-0 overflow-hidden position-relative" style="border-radius:32px;box-shadow:0 8px 32px #00bfff33;background:rgba(30,32,38,0.92);">
@@ -290,6 +329,27 @@
                 <script src="https://static.elfsight.com/platform/platform.js" async></script>
                 <div class="elfsight-app-a81287b7-386f-4ed8-91d9-8d98c3e557f3" data-elfsight-app-lazy></div>
             </div>
+        </section>
+        <!-- Noticias económicas TradingView -->
+        <section class="container mt-5 mb-5 animate__animated animate__fadeInUp animate__delay-4s">
+            <h2 class="text-center mb-4">Noticias económicas</h2>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+              <div class="tradingview-widget-container__widget"></div>
+              <div class="tradingview-widget-copyright"><a href="https://es.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Siga los mercados en TradingView</span></a></div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+              {
+              "displayMode": "regular",
+              "feedMode": "all_symbols",
+              "colorTheme": "dark",
+              "isTransparent": true,
+              "locale": "es",
+              "width": 400,
+              "height": 550
+            }
+              </script>
+            </div>
+            <!-- TradingView Widget END -->
         </section>
     </main>
     <footer id="footerpad" class="footer-elegante" aria-label="Pie de página principal" style="background:linear-gradient(120deg,#23272f 60%,#181c22 100%);border-radius:24px 24px 0 0;box-shadow:0 -4px 24px #00bfff22;">
