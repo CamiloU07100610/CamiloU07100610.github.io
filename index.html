@@ -256,7 +256,7 @@
         background: linear-gradient(120deg, #23272f 60%, #181c22 100%);
         border-radius: 22px;
         box-shadow: 0 8px 32px 0 rgba(0,191,255,0.10), 0 1.5px 12px 0 #007bff22;
-        padding: 32px 18px 18px 18px;
+        padding: 32px 18px 24px 18px;
         margin: 0 auto 32px auto;
         max-width: 100%;
         min-height: 220px;
@@ -292,6 +292,23 @@
         border-radius: 14px !important;
         box-shadow: 0 2px 16px #00bfff22 !important;
         background: #23272f !important;
+      }
+      /* Mejora visual para la caja de Disqus en Opera y otros navegadores */
+      .disqus-modern-box {
+        background: #181c24 !important;
+        border-radius: 16px;
+        border: 1.5px solid #2a2f3a;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+        padding: 24px 12px 12px 12px;
+        min-height: 350px;
+        transition: background 0.3s;
+      }
+      .disqus-modern-box.disqus-visible {
+        animation: fadeInDisqus 1s;
+      }
+      @keyframes fadeInDisqus {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
       @media (max-width: 700px) {
         .disqus-modern-box {
