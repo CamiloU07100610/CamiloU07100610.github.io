@@ -160,6 +160,7 @@
             <div class="collapse navbar-collapse text-center" id="navcol-1">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="https://www.fundacionhogaresclaret.com/">Claret</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./n_institucion.html">Nuestra Institución</a></li>
                     <li class="nav-item"><a class="nav-link" href="./podcast.html">Podcast</a></li>
                     <li class="nav-item"><a class="nav-link" href="/index.html">Radio</a></li>
                     <li class="nav-item"><a class="nav-link active" href="./noticias.html">Noticias</a></li>
@@ -274,36 +275,21 @@
                 </article>
             </div>
         </section>
-        <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-2s">
-            <h2 class="text-center mb-4">Noticias Del Mundo</h2>
-            <div id="noticias-mundo-loader" class="text-center py-4">
-                <div class="spinner-border text-info" role="status">
-                    <span class="visually-hidden">Cargando...</span>
-                </div>
-            </div>
-            <div id="noticias-mundo-widget" style="display:none"></div>
-            <div id="google-news-widget" aria-live="polite">
-                <ul id="news-list">
-                    <li>Cargando noticias...</li>
-                </ul>
-                <div id="feed-widget-container">
-                    <h2>Noticias de El País Colombia</h2>
-                    <div id="feed-items">
-                        <p style="text-align: center;">Cargando noticias...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container mt-5 animate__animated animate__fadeInUp animate__delay-3s">
+        <section class="container mt-5 mb-5 animate__animated animate__fadeInUp animate__delay-4s">
             <h2 class="text-center mb-4">Junior</h2>
             <div class="ratio ratio-16x9 mb-3">
                 <iframe src="https://footystats.org/es/api/club?id=2131" title="Junior" style="border-radius:12px;" frameborder="0" loading="lazy" decoding="async"></iframe>
             </div>
             <div id="fs-upcoming" class="d-flex justify-content-center"></div>
         </section>
+        <!-- Widget de noticias de El Tiempo tipo RSS -->
         <section class="container mt-5 mb-5 animate__animated animate__fadeInUp animate__delay-4s">
-            <h2 class="text-center mb-4">Deportes</h2>
-            <div id="ls-widget" data-w="awo_w5396_666093fc53149" class="livescore-widget"></div>
+            <h2 class="text-center mb-4">Noticias</h2>
+            <div style="margin-top:10px;">
+                <!-- Elfsight RSS Feed | Untitled RSS Feed -->
+                <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                <div class="elfsight-app-a81287b7-386f-4ed8-91d9-8d98c3e557f3" data-elfsight-app-lazy></div>
+            </div>
         </section>
     </main>
     <footer id="footerpad" class="footer-elegante" aria-label="Pie de página principal" style="background:linear-gradient(120deg,#23272f 60%,#181c22 100%);border-radius:24px 24px 0 0;box-shadow:0 -4px 24px #00bfff22;">
@@ -339,8 +325,6 @@
     <!-- El banner de cookies ahora se gestiona globalmente desde script.js -->
     <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer onload="document.getElementById('noticias-mundo-loader').style.display='none';document.getElementById('noticias-mundo-widget').style.display='block';"></script>
-    <script type="text/javascript" src="https://ls.soccersapi.com/widget/res/awo_w5396_666093fc53149/widget.js" defer></script>
     <style>
         /* Minificado y optimizado: solo reglas necesarias para la página */
         #noticias-cards-row .card{min-height:100%;display:flex;flex-direction:column;border-radius:18px;box-shadow:0 4px 24px 0 #00bfff22,0 1.5px 12px 0 #23272f33;background:rgba(30,32,38,0.92);border:1px solid #23272f;margin-bottom:0}#noticias-cards-row .card-img-top{border-radius:18px 18px 0 0}#noticias-cards-row .card-body{color:#e0e0e0;background:transparent}#noticias-cards-row .card-title,#noticias-cards-row .card-text,#noticias-cards-row .text-info,#noticias-cards-row .author span,#noticias-cards-row .stats{color:#e0e0e0!important}#noticias-cards-row .card-title{font-family:'Roboto Slab',Impact,Arial,sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:0.5rem}#noticias-cards-row .card-text{font-size:1.01rem}#noticias-cards-row .author span{font-size:0.98rem}#noticias-cards-row .stats{font-size:0.95rem}#noticias-cards-row .card-body h6.text-info{color:var(--color-accent2)!important;font-size:0.98rem;font-weight:600}@media (max-width:991px){#noticias-cards-row .card-img-top{height:160px!important}}@media (max-width:767px){#noticias-cards-row .card-img-top{height:120px!important}#noticias-cards-row .card{border-radius:12px}}@media (max-width:575px){#noticias-cards-row .card-img-top{height:90px!important}#noticias-cards-row .card{border-radius:8px}}.hero-noticias-section{background:linear-gradient(120deg,#181c22 60%,#23272f 100%);border-radius:32px;box-shadow:0 8px 32px 0 rgba(31,38,135,0.13);overflow:hidden;min-height:260px;position:relative}.hero-img-wrapper{position:relative;background:linear-gradient(135deg,#23272f 60%,#181c22 100%);min-height:220px;max-height:380px;overflow:hidden;border-radius:0 32px 32px 0;box-shadow:0 8px 32px #00bfff22}.hero-img-noticias{width:100%;height:100%;object-fit:cover;min-height:220px;max-height:380px;border-radius:0 32px 32px 0;filter:brightness(0.7) contrast(1.12) saturate(1.18) grayscale(10%);transition:filter 0.5s;z-index:1;position:relative}.hero-img-noticias:hover{filter:brightness(0.85) contrast(1.18) saturate(1.25) grayscale(0%) blur(0.5px)}.hero-img-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(24,28,34,0.25) 60%,rgba(35,39,47,0.55) 100%),radial-gradient(circle at 70% 30%,rgba(0,191,255,0.12) 0%,rgba(112,161,255,0.10) 40%,rgba(24,28,34,0.01) 100%);backdrop-filter:blur(6px) saturate(1.2) brightness(0.98);-webkit-backdrop-filter:blur(6px) saturate(1.2) brightness(0.98);box-shadow:0 8px 32px 0 rgba(0,191,255,0.10),0 1.5px 12px 0 #007bff22;z-index:2;pointer-events:none;transition:backdrop-filter 0.4s,background 0.4s}.hero-img-logo-wrapper{position:absolute;bottom:18px;right:18px;z-index:3;background:rgba(30,32,38,0.82);border-radius:18px;box-shadow:0 2px 12px #00bfff33;padding:10px 18px;display:flex;align-items:center;justify-content:center}.hero-img-logo{width:60px;height:60px;object-fit:contain;filter:drop-shadow(0 2px 8px #00bfff88)}@media (max-width:991px){.hero-img-wrapper,.hero-img-noticias{border-radius:0 18px 18px 0;min-height:160px;max-height:220px}.hero-img-logo{width:44px;height:44px}}@media (max-width:767px){.hero-img-wrapper,.hero-img-noticias{border-radius:12px 12px 0 0;min-height:120px;max-height:160px}.hero-img-logo-wrapper{bottom:8px;right:8px;padding:6px 10px}.hero-img-logo{width:32px;height:32px}}@media (max-width:575px){.hero-img-wrapper,.hero-img-noticias{border-radius:8px 8px 0 0;min-height:80px;max-height:120px}.hero-img-logo-wrapper{bottom:4px;right:4px;padding:3px 6px}.hero-img-logo{width:22px;height:22px}}.hero-title{color:#fff;font-family:'Roboto Slab',Impact,Arial,sans-serif;font-size:2.6rem;letter-spacing:1.5px;text-shadow:0 2px 16px #00bfff44;background:linear-gradient(90deg,#00bfff 0%,#70A1FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-hr{width:70px;border:2.5px solid #70A1FF;opacity:0.8;margin:0 auto 18px auto}.hero-desc{color:#e0e0e0;font-size:1.18rem;max-width:440px;margin-bottom:0}.brand-gradient{background:linear-gradient(90deg,#00bfff 0%,#70A1FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:bold}@media (max-width:991px){.hero-noticias-section{border-radius:18px}.hero-img-wrapper,.hero-content-wrapper{border-radius:0 18px 18px 0}.hero-img-noticias{border-radius:0 18px 18px 0;min-height:160px;max-height:220px}.hero-title{font-size:2rem}}@media (max-width:767px){.hero-noticias-section{flex-direction:column;border-radius:12px}.hero-img-wrapper,.hero-content-wrapper{border-radius:12px 12px 0 0}.hero-img-noticias{border-radius:12px 12px 0 0;min-height:120px;max-height:160px}.hero-title{font-size:1.4rem}}@media (max-width:575px){.hero-noticias-section{border-radius:8px}.hero-img-wrapper,.hero-img-noticias{border-radius:8px 8px 0 0;min-height:80px;max-height:120px}.hero-title{font-size:1.1rem}.hero-desc{font-size:0.98rem}}#google-news-widget{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;border:1px solid #ddd;border-radius:8px;padding:20px;max-width:600px;margin:20px auto;background-color:#f9f9f9}#google-news-widget h2{font-size:22px;margin:0 0 15px 0;color:#212121;border-bottom:2px solid #eee;padding-bottom:10px}#google-news-widget ul{list-style-type:none;padding:0;margin:0}#google-news-widget li{margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #eee}#google-news-widget li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}#google-news-widget a{text-decoration:none;color:#1a0dab;font-size:18px;font-weight:bold}#google-news-widget a:hover{text-decoration:underline}#google-news-widget p{font-size:14px;color:#5f6368;margin:5px 0 0 0}#google-news-widget .news-source{font-size:12px;color:#3c4043;font-style:italic}
@@ -368,51 +352,6 @@
         if ('scrollBehavior' in document.documentElement.style) {
             document.documentElement.style.scrollBehavior = 'smooth';
         }
-    </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const feedContainer = document.getElementById('feed-items');
-    // 1. La URL del feed de El País
-    const rssUrl = "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/america-colombia/portada";
-    // 2. Usamos el proxy rss2json para convertir el RSS a JSON
-    // Se debe "codificar" la URL para que funcione como parámetro
-    // Para desarrollo local, usa un proxy CORS:
-    const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-    fetch(apiUrl)
-    .then(async response => {
-        try {
-            const data = await response.json();
-            feedContainer.innerHTML = '';
-            const items = data.items;
-            if (!items || !Array.isArray(items)) throw new Error('No hay noticias disponibles.');
-            items.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.classList.add('feed-item');
-                const titleElement = document.createElement('a');
-                titleElement.classList.add('feed-item-title');
-                titleElement.href = item.link;
-                titleElement.target = "_blank";
-                titleElement.textContent = item.title;
-                const dateElement = document.createElement('p');
-                dateElement.classList.add('feed-item-date');
-                dateElement.textContent = new Date(item.pubDate).toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
-                const descriptionElement = document.createElement('div');
-                descriptionElement.classList.add('feed-item-description');
-                descriptionElement.innerHTML = item.description;
-                itemElement.appendChild(titleElement);
-                itemElement.appendChild(dateElement);
-                itemElement.appendChild(descriptionElement);
-                feedContainer.appendChild(itemElement);
-            });
-        } catch (err) {
-            feedContainer.innerHTML = "<p>No se pudieron cargar las noticias (respuesta no válida del servidor o proxy CORS saturado).</p>";
-        }
-    })
-    .catch(error => {
-        console.error("Error al cargar el feed:", error);
-        feedContainer.innerHTML = "<p>No se pudieron cargar las noticias (error de red o CORS).</p>";
-    });
-    });
     </script>
 </body>
 
